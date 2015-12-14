@@ -332,6 +332,7 @@
         }
 
         function removeMarkedContentForBOT() {
+
             console.log("Before removing content BOT_ : ", BOT_WIN_PATTERN);
             for(var i = 0; i < STATE_SELECTED.length; ++i) {
                 for(var x = 0; x < BOT_WIN_PATTERN.length; ++x) {
@@ -344,14 +345,12 @@
             console.log("After removing content BOT_ : ", BOT_WIN_PATTERN);
         }
 
-
         function generateWinningPatternForBot(idx) {
             /**
-             * 1. Generate a winning pattern for USER
+             * 1. Generate a winning pattern for BOT
              * 2. Remove all the already marked elements.
-             * 3. Update the global variable. WIN_PATTERN
+             * 3. Update the global variable. BOT_WIN_PATTERN
              */
-
             switch(idx) {
                 case 1: BOT_WIN_PATTERN = [[1, 2, 3], [1, 4, 7], [1, 5, 9]]; break;
                 case 2: BOT_WIN_PATTERN = [[1, 2, 3], [2, 5, 8]]; break;
@@ -367,9 +366,16 @@
             console.log("Generating Pattern : ", BOT_WIN_PATTERN);
         }
 
+
+        // how to check it bot can win.
+        // Check if there only one step required to win for the bot.
+        // To check that we need
         function canBotWinInOneStep() {
+
             generateWinningPatternForBot(BOT_BOX[BOT_BOX.length-1]);
+
             removeMarkedContentForBOT();
+
             for(var i = 0; i < BOT_WIN_PATTERN.length; ++i)  {
                 if(BOT_WIN_PATTERN[i].length == 1) {
                     return true;
@@ -377,6 +383,53 @@
             }
             return false;
         }
+
+        function GetBotMove () {
+
+                console.log("Checking whether if bot can win");
+                for(var i = 0; i < BOT_WIN_PATTERN.length; ++i)  {
+                    if(BOT_WIN_PATTERN[i].length == 1) {
+                        BotMarkPosition = BOT_WIN_PATTERN[i][0];
+                    }
+                }
+                console.log("BOT ATTACK MOVE", BotMarkPosition);
+                return BotMarkPosition;
+        }
+
+        function getBotMove() {
+            var wpatt = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+            [1, 4, 7],
+            [2, 5, 8],
+            [3, 6, 9],
+            [1, 5, 9],
+            [3, 5, 7]
+            ];
+
+            var NextMove;
+            var count = 0;
+            for(var i = 0; i < wpatt.length; ++i) {
+                count = 0;
+                if(BOT_BOX.indexOf(wpatt[i][0]) > -1) ++count;
+                if(BOT_BOX.indexOf(wpatt[i][1]) > -1) ++count;
+                if(BOT_BOX.indexOf(wpatt[i][2]) > -1) ++count;
+
+                if(count > 1) {
+                    if( !(BOT_BOX.indexOf(wpatt[i][0]) > -1)) NextMove = wpatt[i][0];
+                    if( !(BOT_BOX.indexOf(wpatt[i][1]) > -1)) NextMove = wpatt[i][1];
+                    if( !(BOT_BOX.indexOf(wpatt[i][2]) > -1)) NextMove = wpatt[i][2];
+                }
+            }
+
+            if(typeof NextMove != 'undefined') {
+                return NextMove;
+            }
+            return 0;
+        }
+
+
         // makes decision w.r.t user's recent input
         function addBotInput(idx) {
             /**
@@ -387,70 +440,44 @@
              * 5. Add them to the respective variable array.
              */
 
-            // Set user win_pattern
+            // Set user win_pattern to decide on it.
             generateWinningPattern(idx);
 
-            console.log("something : ", idx);
-
+            // remove already marked content from it.
             removeMarkedContent();
 
-            if(canBotWinInOneStep() && BOT_BOX.length > 1) {
-                console.log("Checking whether if bot can win");
-                for(var i = 0; i < BOT_WIN_PATTERN.length; ++i)  {
-                    if(BOT_WIN_PATTERN[i].length == 1) {
-                        BotMarkPosition = BOT_WIN_PATTERN[i][0];
-                        console.log("Bot win pattern", BOT_WIN_PATTERN);
-                        console.log("Point to talk on.", BotMarkPosition);
+            var BotMarkPosition;
 
-                        // in-order to avoid repeated numbers in the array
-                        if (!(BOT_BOX.indexOf(BotMarkPosition) > -1))
-                            BOT_BOX.push(BotMarkPosition);
-
-                        // make mark on board
-                        var tagId = "box" + BotMarkPosition;
-                        console.log(tagId);
-                        var elem = document.getElementById(tagId);
-                        elem.innerHTML = "";
-                        elem.style.background = "none";
-
-                        var imgtag = document.createElement("img");
-                        imgtag.src = "image/x.gif";
-                        elem.appendChild(imgtag);
-
-                        // Update the state selected array
-                        if (!(STATE_SELECTED.indexOf(BotMarkPosition) > -1))
-                            STATE_SELECTED.push(BotMarkPosition);
-
-                        return;
+            var xtemp;
+            if((xtemp = getBotMove()) != 0) {
+                BotMarkPosition = xtemp;
+            }
+            else {
+                var min = 99999;
+                for(var i = 0; i < WIN_PATTERN.length; ++i) {
+                    var tempSize = WIN_PATTERN[i].length;
+                    if(min > tempSize && tempSize != 0)  {
+                        min = tempSize;
                     }
                 }
-            }
 
-            // calculates minimum size WIN_PATTERN.
-            var min = 99999;
-            for(var i = 0; i < WIN_PATTERN.length; ++i) {
-                var tempSize = WIN_PATTERN[i].length;
-                if(min > tempSize && tempSize != 0)  {
-                    min = tempSize;
-                }
-            }
+                var tempValue = 99999;
+                var diff;
+                console.log("winning pattern : ", WIN_PATTERN);
 
-            var BotMarkPosition;
-            var tempValue = 99999;
-            var diff;
-            console.log("winning pattern : ", WIN_PATTERN);
-
-            for(var i = 0; i < WIN_PATTERN.length; ++i) {
-                if(WIN_PATTERN[i].length == min) {
-                    for(var x = 0; x < WIN_PATTERN[i].length; ++x) {
-                        diff = Math.abs(idx - WIN_PATTERN[i][x]);
-                        if(tempValue > diff && !(BOT_BOX.indexOf(WIN_PATTERN[i][x]) > -1)) {
-                            tempValue = diff;
-                            BotMarkPosition = WIN_PATTERN[i][x];
+                for(var i = 0; i < WIN_PATTERN.length; ++i) {
+                    if(WIN_PATTERN[i].length == min) {
+                        for(var x = 0; x < WIN_PATTERN[i].length; ++x) {
+                            diff = Math.abs(idx - WIN_PATTERN[i][x]);
+                            if(tempValue > diff && !(BOT_BOX.indexOf(WIN_PATTERN[i][x]) > -1)) {
+                                tempValue = diff;
+                                BotMarkPosition = WIN_PATTERN[i][x];
+                            }
                         }
                     }
                 }
             }
+
 
             console.log("BOT STEP : ", BotMarkPosition);
 
