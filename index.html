@@ -11,66 +11,70 @@
     </head>
     <style>
         body{
-        height: 100%;
-        width: 100%;
-        font-family: raleway;
-    text-align: center;
-    font-size: 23px;
+            background: #3b3a35;
+            color: white;
+            font-family: raleway;
+            min-height: 100%;
+            height: 100%;
+
         }
-        .container {
-        height: 100%;
-        width: 100%;
-    display: block;
-    margin-left: 7%;
-    margin-right: 7%;
-        }
-        .block, .row {
-        padding: 20px;
-        }
-        .row {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        }
-        .block {
-        height: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-        background: #fff568;
-        }
+
         table {
+            font-size: 50px;
+            border-color: white;
+            font-weight: bolder;
+        }
+
+        .table td {
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+        }
+
+        table td:first-child {
+            border-left: none;
+        }
+
+        table td:last-child {
+            border-right: none;
+        }
+
+        .fill, .table {
+            min-height: 100%;
             height: 100%;
         }
-        td {;
-            width: 100px;
-            height: 100px;
-        }
-        img {
-            height: 34px;
-            width: 34px;
-        }
+
+
     </style>
     <body onload="StartGame()">
-    <br>
-        <h2> Tic tac toe game</h2>
-        <hr>
-        <br>
-        <div id="container">
-            <table>
+        <div class="container fill" style="margin-left:10%;margin-right:10%;">
+            <table class="table text-center">
                 <tbody>
-                    <tr class="row">
-                        <td class="block" onclick="UpdateBlock('box1', 1)" id="box1" ></td>
-                        <td class="block" onclick="UpdateBlock('box2', 2)" id="box2" ></td>
-                        <td class="block" onclick="UpdateBlock('box3', 3)" id="box3" ></td>
+                    <tr scope="row">
+                        <td style="border-top: none;" class="block" onclick="UpdateBlock('box1', 1)" id="box1" ></td>
+                        <td style="border-top: none;"  class="block" onclick="UpdateBlock('box2', 2)" id="box2" ></td>
+                        <td style="border-top: none;"  class="block" onclick="UpdateBlock('box3', 3)" id="box3" ></td>
                     </tr>
-                    <tr class="row">
+                    <tr scope="row">
                         <td class="block" onclick="UpdateBlock('box4', 4)" id="box4" ></td>
                         <td class="block" onclick="UpdateBlock('box5', 5)" id="box5" ></td>
                         <td class="block" onclick="UpdateBlock('box6', 6)" id="box6" ></td>
                     </tr>
-                    <tr class="row">
+                    <tr scope="row">
                         <td class="block" onclick="UpdateBlock('box7', 7)" id="box7" ></td>
                         <td class="block" onclick="UpdateBlock('box8', 8)" id="box8" ></td>
                         <td class="block" onclick="UpdateBlock('box9', 9)" id="box9" ></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+            <br>
+            <table class="table text-center">
+                <tbody>
+                    <tr>
+                        <td style="border-top: none;"><img src="image/user.png" height='50%' alt='user photo'> : O</td>
+                        <td  style="border-top: none;"><img src="image/roboto.png" height='50%' alt='robot photo'>: X</td>
                     </tr>
                 </tbody>
             </table>
@@ -98,16 +102,16 @@
 
         function PlayBot() {
             var elem = document.getElementById('box7');
-            elem.innerHTML = "";
-            elem.style.background = "none";
+            elem.innerHTML = " X ";
+            // elem.style.background = "none";
 
-            var imgtag = document.createElement("img");
-            imgtag.src = "image/x.gif";
-            elem.appendChild(imgtag);
+
+            // var imgtag = document.createElement("img");
+            // imgtag.src = "image/x.gif";
+            // elem.appendChild(imgtag);
         }
 
         function BotChance() {
-
             // check if element is already there in WIN_PATTERN and in traversed path
             // for(var i = 0; i < WIN_PATTERN)
             // add element if it not there.
@@ -253,12 +257,13 @@
 
             // make mark on board
             var elem = document.getElementById(id);
-            elem.innerHTML = "";
-            elem.style.background = "none";
+            elem.innerHTML = " O ";
+            // elem.style.background = "none";
 
-            var imgtag = document.createElement("img");
-            imgtag.src = "image/o.gif";
-            elem.appendChild(imgtag);
+
+            // var imgtag = document.createElement("img");
+            // imgtag.src = "image/x.gif";
+            // elem.appendChild(imgtag);
 
             // Update the state selected array
             if (!(STATE_SELECTED.indexOf(idx) > -1))
@@ -292,14 +297,12 @@
             return false;
         }
 
-
-
         function showNoticeAlreadyPlayed(idx) {
             if(USER_BOX.indexOf(idx) > -1) { // User played it
-                document.getElementById("notice-area").innerHTML = "Warning! This box is already marked by you.";
+                document.getElementById("notice-area").innerHTML = '<div class="alert alert-warning alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong>  This box is already marked by you.</div>';
             }
             if(BOT_BOX.indexOf(idx) > -1) { // User played it
-                document.getElementById("notice-area").innerHTML = "Warning! This box is marked by BOT.";
+                document.getElementById("notice-area").innerHTML = '<div class="alert alert-warning alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong>  This box is already marked BOT.</div>';
             }
         }
 
@@ -570,12 +573,13 @@
             // make mark on board
             var tagId = "box" + BotMarkPosition;
             var elem = document.getElementById(tagId);
-            elem.innerHTML = "";
-            elem.style.background = "none";
+            elem.innerHTML = " X ";
+            // elem.style.background = "none";
 
-            var imgtag = document.createElement("img");
-            imgtag.src = "image/x.gif";
-            elem.appendChild(imgtag);
+
+            // var imgtag = document.createElement("img");
+            // imgtag.src = "image/x.gif";
+            // elem.appendChild(imgtag);
 
             // Update the state selected array
             if (!(STATE_SELECTED.indexOf(BotMarkPosition) > -1))
@@ -628,7 +632,7 @@
             // Set all the input to __
             var x = document.getElementsByClassName("block");
             for(var i = 0; i < x.length; ++i) {
-                x[i].innerHTML = " __ ";
+                x[i].innerHTML = " -- ";
             }
         }
 
