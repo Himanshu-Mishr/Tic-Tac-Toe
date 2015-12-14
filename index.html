@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tic tac toe</title>
+    </head>
+    <style>
+        body{
+        height: 100%;
+        width: 100%;
+        font-family: raleway;
+    text-align: center;
+    font-size: 23px;
+        }
+        .container {
+        height: 100%;
+        width: 100%;
+    display: block;
+    margin-left: 7%;
+    margin-right: 7%;
+        }
+        .block, .row {
+        padding: 20px;
+        }
+        .row {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        }
+        .block {
+        height: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        background: #fff568;
+        }
+        table {
+            height: 100%;
+        }
+        td {;
+            width: 100px;
+            height: 100px;
+        }
+        img {
+            height: 34px;
+            width: 34px;
+        }
+    </style>
+    <body onload="StartGame()">
+        <h2> Tic tac toe game</h2>
+        <hr>
+        <br>
+        <div id="container">
+            <table>
+                <tbody>
+                    <tr class="row">
+                        <td class="block" onclick="UpdateBlock('box1', 1)" id="box1" ></td>
+                        <td class="block" onclick="UpdateBlock('box2', 2)" id="box2" ></td>
+                        <td class="block" onclick="UpdateBlock('box3', 3)" id="box3" ></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="block" onclick="UpdateBlock('box4', 4)" id="box4" ></td>
+                        <td class="block" onclick="UpdateBlock('box5', 5)" id="box5" ></td>
+                        <td class="block" onclick="UpdateBlock('box6', 6)" id="box6" ></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="block" onclick="UpdateBlock('box7', 7)" id="box7" ></td>
+                        <td class="block" onclick="UpdateBlock('box8', 8)" id="box8" ></td>
+                        <td class="block" onclick="UpdateBlock('box9', 9)" id="box9" ></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="notice-area">
+
+            </div>
+        </div>
+        <script>
+
+        // Array-of-Array: Pattern of possible win the user.
+        var WIN_PATTERN = [];
+
+        // Array-of-Array: Pattern of possible win the bot.
+        var BOT_WIN_PATTERN = [];
+
+        // boxes already played.
+        var STATE_SELECTED = [];
+
+        // boxes played by user.
+        var USER_BOX = [];
+
+        // boxes played by bot
+        var BOT_BOX = [];
+
+
+        function PlayBot() {
+            var elem = document.getElementById('box7');
+            elem.innerHTML = "";
+            elem.style.background = "none";
+
+            var imgtag = document.createElement("img");
+            imgtag.src = "image/x.gif";
+            elem.appendChild(imgtag);
+        }
+
+        function BotChance() {
+
+            // check if element is already there in WIN_PATTERN and in traversed path
+            // for(var i = 0; i < WIN_PATTERN)
+            // add element if it not there.
+            if (!(USER_BOX.indexOf(idx) > -1))
+                BOT_BOX.push(idx);
+            console.log("BOT's box: ", BOT_BOX);
+
+            PlayBot();
+        }
+
+        var replacePage = function(url, successHandler, errorHandler) {
+
+            // Checking for XMLHttp Request Object
+            var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            xhr.open('get', url, true);
+            xhr.onreadystatechange = function() {
+                var status;
+                var data;
+                // https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
+                if (xhr.readyState == 4) { // `DONE`
+                    status = xhr.status;
+                    if (status == 200) {
+                        data = xhr.responseText;
+                        successHandler && successHandler(data);
+                    } else {
+                        errorHandler && errorHandler(status);
+                    }
+                }
+            };
+            xhr.send();
+        };
+
+        function isThisBoxAlreadyMarked(idx) {
+            // Yes
+            if (STATE_SELECTED.indexOf(idx) > -1)
+                return true;
+
+            // No
+            return false;
+        }
+
+        function showWonMsg() {
+            replacePage("winner.html",
+                //for success
+                function success(data) {
+                    document.write("");
+                    document.write(data);
+                    // console.log(data);
+                },
+                // for error
+                function error_msg(status) {
+                    // bootstrap alert notification
+                    // show_notification(status);
+                });
+        }
+
+        function showDrawMsg() {
+            replacePage("draw.html",
+                //for success
+                function success(data) {
+                    document.write("");
+                    document.write(data);
+                    // console.log(data);
+                },
+                // for error
+                function error_msg(status) {
+                    // bootstrap alert notification
+                    // show_notification(status);
+                });
+        }
+
+
+        function showLoseMsg() {
+            replacePage("loser.html",
+                //for success
+                function success(data) {
+                    document.write("");
+                    document.write(data);
+                    // console.log(data);
+                },
+                // for error
+                function error_msg(status) {
+                    // bootstrap alert notification
+                    // show_notification(status);
+                });
+        }
+
+        function checkArrayState(ARR) {
+            if(
+                // left to right
+                ( ARR.indexOf(1) > -1 && ARR.indexOf(2) > -1 && ARR.indexOf(3) > -1 ) ||
+                ( ARR.indexOf(4) > -1 && ARR.indexOf(5) > -1 && ARR.indexOf(6) > -1 ) ||
+                ( ARR.indexOf(7) > -1 && ARR.indexOf(8) > -1 && ARR.indexOf(9) > -1 ) ||
+
+                // top to bottom
+                ( ARR.indexOf(1) > -1 && ARR.indexOf(4) > -1 && ARR.indexOf(7) > -1 ) ||
+                ( ARR.indexOf(2) > -1 && ARR.indexOf(5) > -1 && ARR.indexOf(8) > -1 ) ||
+                ( ARR.indexOf(3) > -1 && ARR.indexOf(6) > -1 && ARR.indexOf(9) > -1 ) ||
+
+                // diagonals
+                ( ARR.indexOf(1) > -1 && ARR.indexOf(5) > -1 && ARR.indexOf(9) > -1 ) ||
+                ( ARR.indexOf(3) > -1 && ARR.indexOf(5) > -1 && ARR.indexOf(7) > -1 )
+            )
+                return true;
+            return false;
+        }
+
+        /*
+        check the match pattern with State_Selected
+        return 1  : USER has won
+        return -1 : BOT has won
+        return 0  : Draw
+        return 5  : Can't decide at this state
+         */
+        function checkMatchState() {
+            if(checkArrayState(USER_BOX)) {      // check for USER
+                return 1;
+            }
+            else {
+                if(checkArrayState(BOT_BOX)) {  // check for BOT
+                    return -1;
+                }
+                else {
+                    // if no one has won and all box filled then it is DRAW
+                    if((BOT_BOX.length + USER_BOX.length) == 9) {
+                        return 0;
+                    }
+                    else { // if no one has won and match is not complete then DRAW
+                        return 5;
+                    }
+                }
+            }
+            return 5;
+        }
+
+        // 1. add user input
+        // 2. mark user box
+        function addUserInput(id, idx) {
+
+            // in-order to avoid repeated numbers in the array
+            if (!(USER_BOX.indexOf(idx) > -1))
+                USER_BOX.push(idx);
+
+            // make mark on board
+            var elem = document.getElementById(id);
+            elem.innerHTML = "";
+            elem.style.background = "none";
+
+            var imgtag = document.createElement("img");
+            imgtag.src = "image/o.gif";
+            elem.appendChild(imgtag);
+
+            // Update the state selected array
+            if (!(STATE_SELECTED.indexOf(idx) > -1))
+                STATE_SELECTED.push(idx);
+        }
+
+
+        // check if user have won the match
+        function hasUserWon() {
+            var result = checkMatchState();
+            console.log("Match Result : ", result);
+            if( result == 1) {
+                return true;
+            }
+            return false;
+        }
+
+        // check if bot have won the match
+        function hasBotWon() {
+            if(checkMatchState() == -1) {
+                return true;
+            }
+            return false;
+        }
+
+        // check if match draw
+        function hasMatchDrawn() {
+            if(checkMatchState() == 0) {
+                return true;
+            }
+            return false;
+        }
+
+
+
+        function showNoticeAlreadyPlayed(idx) {
+            if(USER_BOX.indexOf(idx) > -1) { // User played it
+                document.getElementById("notice-area").innerHTML = "Warning! This box is already marked by you.";
+            }
+            if(BOT_BOX.indexOf(idx) > -1) { // User played it
+                document.getElementById("notice-area").innerHTML = "Warning! This box is marked by BOT.";
+            }
+        }
+
+        function generateWinningPattern(idx) {
+            /**
+             * 1. Generate a winning pattern for USER
+             * 2. Remove all the already marked elements.
+             * 3. Update the global variable. WIN_PATTERN
+             */
+
+            switch(idx) {
+                case 1: WIN_PATTERN = [[1, 2, 3], [1, 4, 7], [1, 5, 9]]; break;
+                case 2: WIN_PATTERN = [[1, 2, 3], [2, 5, 8]]; break;
+                case 3: WIN_PATTERN = [[1, 2, 3], [3, 5, 7], [3, 6, 9]]; break;
+                case 4: WIN_PATTERN = [[1, 4, 7], [4, 5, 6]]; break;
+                case 5: WIN_PATTERN = [[1, 5, 9], [3, 5, 7]]; break;
+                case 6: WIN_PATTERN = [[4, 5, 6], [3, 6, 9]]; break;
+                case 7: WIN_PATTERN = [[1, 4, 7], [3, 5, 7], [7, 8, 9]]; break;
+                case 8: WIN_PATTERN = [[2, 5, 8], [7, 8, 9]]; break;
+                case 9: WIN_PATTERN = [[1, 5, 9], [3, 6, 9], [7, 8, 9]]; break;
+                default: console.log("Error in generating WIN_PATTERN");
+            }
+            console.log("Generating Pattern : ", WIN_PATTERN);
+        }
+
+        function removeMarkedContent() {
+            console.log("Before removing content : ", WIN_PATTERN);
+            for(var i = 0; i < STATE_SELECTED.length; ++i) {
+                for(var x = 0; x < WIN_PATTERN.length; ++x) {
+                    var index = WIN_PATTERN[x].indexOf(STATE_SELECTED[i]);
+                    if (index > -1) {
+                        WIN_PATTERN[x].splice(index, 1);
+                    }
+                }
+            }
+            console.log("After removing content : ", WIN_PATTERN);
+        }
+
+        function removeMarkedContentForBOT() {
+            console.log("Before removing content BOT_ : ", BOT_WIN_PATTERN);
+            for(var i = 0; i < STATE_SELECTED.length; ++i) {
+                for(var x = 0; x < BOT_WIN_PATTERN.length; ++x) {
+                    var index = BOT_WIN_PATTERN[x].indexOf(STATE_SELECTED[i]);
+                    if (index > -1) {
+                        BOT_WIN_PATTERN[x].splice(index, 1);
+                    }
+                }
+            }
+            console.log("After removing content BOT_ : ", BOT_WIN_PATTERN);
+        }
+
+
+        function generateWinningPatternForBot(idx) {
+            /**
+             * 1. Generate a winning pattern for USER
+             * 2. Remove all the already marked elements.
+             * 3. Update the global variable. WIN_PATTERN
+             */
+
+            switch(idx) {
+                case 1: BOT_WIN_PATTERN = [[1, 2, 3], [1, 4, 7], [1, 5, 9]]; break;
+                case 2: BOT_WIN_PATTERN = [[1, 2, 3], [2, 5, 8]]; break;
+                case 3: BOT_WIN_PATTERN = [[1, 2, 3], [3, 5, 7], [3, 6, 9]]; break;
+                case 4: BOT_WIN_PATTERN = [[1, 4, 7], [4, 5, 6]]; break;
+                case 5: BOT_WIN_PATTERN = [[1, 5, 9], [3, 5, 7]]; break;
+                case 6: BOT_WIN_PATTERN = [[4, 5, 6], [3, 6, 9]]; break;
+                case 7: BOT_WIN_PATTERN = [[1, 4, 7], [3, 5, 7], [7, 8, 9]]; break;
+                case 8: BOT_WIN_PATTERN = [[2, 5, 8], [7, 8, 9]]; break;
+                case 9: BOT_WIN_PATTERN = [[1, 5, 9], [3, 6, 9], [7, 8, 9]]; break;
+                default: console.log("Error in generating BOT_WIN_PATTERN", idx);
+            }
+            console.log("Generating Pattern : ", BOT_WIN_PATTERN);
+        }
+
+        function canBotWinInOneStep() {
+            generateWinningPatternForBot(BOT_BOX[BOT_BOX.length-1]);
+            removeMarkedContentForBOT();
+            for(var i = 0; i < BOT_WIN_PATTERN.length; ++i)  {
+                if(BOT_WIN_PATTERN[i].length == 1) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        // makes decision w.r.t user's recent input
+        function addBotInput(idx) {
+            /**
+             * 1. Generate Winning Pattern if not
+             * 2. Select the row with minimum no of elements
+             * 3. If matched with minimum then go with randomly selected row.
+             * 4. then select the nearest to the marked element.
+             * 5. Add them to the respective variable array.
+             */
+
+            // Set user win_pattern
+            generateWinningPattern(idx);
+
+            console.log("something : ", idx);
+
+            removeMarkedContent();
+
+            if(canBotWinInOneStep() && BOT_BOX.length > 1) {
+                console.log("Checking whether if bot can win");
+                for(var i = 0; i < BOT_WIN_PATTERN.length; ++i)  {
+                    if(BOT_WIN_PATTERN[i].length == 1) {
+                        BotMarkPosition = BOT_WIN_PATTERN[i][0];
+                        console.log("Bot win pattern", BOT_WIN_PATTERN);
+                        console.log("Point to talk on.", BotMarkPosition);
+
+                        // in-order to avoid repeated numbers in the array
+                        if (!(BOT_BOX.indexOf(BotMarkPosition) > -1))
+                            BOT_BOX.push(BotMarkPosition);
+
+                        // make mark on board
+                        var tagId = "box" + BotMarkPosition;
+                        console.log(tagId);
+                        var elem = document.getElementById(tagId);
+                        elem.innerHTML = "";
+                        elem.style.background = "none";
+
+                        var imgtag = document.createElement("img");
+                        imgtag.src = "image/x.gif";
+                        elem.appendChild(imgtag);
+
+                        // Update the state selected array
+                        if (!(STATE_SELECTED.indexOf(BotMarkPosition) > -1))
+                            STATE_SELECTED.push(BotMarkPosition);
+
+                        return;
+                    }
+                }
+            }
+
+            // calculates minimum size WIN_PATTERN.
+            var min = 99999;
+            for(var i = 0; i < WIN_PATTERN.length; ++i) {
+                var tempSize = WIN_PATTERN[i].length;
+                if(min > tempSize && tempSize != 0)  {
+                    min = tempSize;
+                }
+            }
+
+            var BotMarkPosition;
+            var tempValue = 99999;
+            var diff;
+            console.log("winning pattern : ", WIN_PATTERN);
+
+            for(var i = 0; i < WIN_PATTERN.length; ++i) {
+                if(WIN_PATTERN[i].length == min) {
+                    for(var x = 0; x < WIN_PATTERN[i].length; ++x) {
+                        diff = Math.abs(idx - WIN_PATTERN[i][x]);
+                        if(tempValue > diff && !(BOT_BOX.indexOf(WIN_PATTERN[i][x]) > -1)) {
+                            tempValue = diff;
+                            BotMarkPosition = WIN_PATTERN[i][x];
+                        }
+                    }
+                }
+            }
+
+            console.log("BOT STEP : ", BotMarkPosition);
+
+            // in-order to avoid repeated numbers in the array
+            if (!(BOT_BOX.indexOf(BotMarkPosition) > -1))
+                BOT_BOX.push(BotMarkPosition);
+
+            // make mark on board
+            var tagId = "box" + BotMarkPosition;
+            console.log(tagId);
+            var elem = document.getElementById(tagId);
+            elem.innerHTML = "";
+            elem.style.background = "none";
+
+            var imgtag = document.createElement("img");
+            imgtag.src = "image/x.gif";
+            elem.appendChild(imgtag);
+
+            // Update the state selected array
+            if (!(STATE_SELECTED.indexOf(BotMarkPosition) > -1))
+                STATE_SELECTED.push(BotMarkPosition);
+        }
+
+        // Make a move
+        function UpdateBlock(id, idx) {
+            /**
+             * 1. user action recorder :
+             * 2. Register users input.
+             * 3. Check if user has won.
+             * 4. Let bot make input
+             * 5. Check if BOT has won
+             */
+
+            // if already played , alert respectively.
+            if(isThisBoxAlreadyMarked(idx)) {
+                showNoticeAlreadyPlayed(idx);
+            }
+            else { // if not then play it.
+                addUserInput(id, idx);
+
+                console.log("State_Selected : ", STATE_SELECTED);
+
+                // check with current state of variables.
+                if(hasUserWon()) {
+                    showWonMsg(); //------------------------------------------> EXIT
+                } // else case is not known.
+
+                if(hasMatchDrawn()) {   // just check if all the boxes have been filled.
+                    showDrawMsg();
+                } // else this game is not yet complete
+
+                addBotInput(idx);
+
+                console.log("State_Selected : ", STATE_SELECTED);
+
+                // check with current state of variables
+                if(hasBotWon()) {
+                    showLoseMsg(); // ----------------------------------------> EXIT
+                }
+                else if(hasMatchDrawn()) {   // just check if all the boxes have been filled.
+                    showDrawMsg();
+                } // else this game is not yet complete
+            }
+        }
+
+
+        // Driver function to load the game.
+        function StartGame() {
+            // Set all the input to __
+            var x = document.getElementsByClassName("block");
+            for(var i = 0; i < x.length; ++i) {
+                x[i].innerHTML = " __ ";
+            }
+        }
+
+        </script>
+    </body>
+</html>
