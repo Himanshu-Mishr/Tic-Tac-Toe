@@ -106,7 +106,7 @@
             // add element if it not there.
             if (!(USER_BOX.indexOf(idx) > -1))
                 BOT_BOX.push(idx);
-            console.log("BOT's box: ", BOT_BOX);
+            // console.log("BOT's box: ", BOT_BOX);
 
             PlayBot();
         }
@@ -262,7 +262,7 @@
         // check if user have won the match
         function hasUserWon() {
             var result = checkMatchState();
-            console.log("Match Result : ", result);
+            // console.log("Match Result : ", result);
             if( result == 1) {
                 return true;
             }
@@ -308,18 +308,18 @@
                 case 2: WIN_PATTERN = [[1, 2, 3], [2, 5, 8]]; break;
                 case 3: WIN_PATTERN = [[1, 2, 3], [3, 5, 7], [3, 6, 9]]; break;
                 case 4: WIN_PATTERN = [[1, 4, 7], [4, 5, 6]]; break;
-                case 5: WIN_PATTERN = [[1, 5, 9], [3, 5, 7]]; break;
+                case 5: WIN_PATTERN = [[1, 5, 9], [3, 5, 7], [2, 5, 8], [4, 5, 6]]; break;
                 case 6: WIN_PATTERN = [[4, 5, 6], [3, 6, 9]]; break;
                 case 7: WIN_PATTERN = [[1, 4, 7], [3, 5, 7], [7, 8, 9]]; break;
                 case 8: WIN_PATTERN = [[2, 5, 8], [7, 8, 9]]; break;
                 case 9: WIN_PATTERN = [[1, 5, 9], [3, 6, 9], [7, 8, 9]]; break;
                 default: console.log("Error in generating WIN_PATTERN");
             }
-            console.log("Generating Pattern : ", WIN_PATTERN);
+            // console.log("Generating Pattern : ", WIN_PATTERN);
         }
 
         function removeMarkedContent() {
-            console.log("Before removing content : ", WIN_PATTERN);
+            // console.log("Before removing content : ", WIN_PATTERN);
             for(var i = 0; i < STATE_SELECTED.length; ++i) {
                 for(var x = 0; x < WIN_PATTERN.length; ++x) {
                     var index = WIN_PATTERN[x].indexOf(STATE_SELECTED[i]);
@@ -328,12 +328,12 @@
                     }
                 }
             }
-            console.log("After removing content : ", WIN_PATTERN);
+            // console.log("After removing content : ", WIN_PATTERN);
         }
 
         function removeMarkedContentForBOT() {
 
-            console.log("Before removing content BOT_ : ", BOT_WIN_PATTERN);
+            // console.log("Before removing content BOT_ : ", BOT_WIN_PATTERN);
             for(var i = 0; i < STATE_SELECTED.length; ++i) {
                 for(var x = 0; x < BOT_WIN_PATTERN.length; ++x) {
                     var index = BOT_WIN_PATTERN[x].indexOf(STATE_SELECTED[i]);
@@ -342,7 +342,7 @@
                     }
                 }
             }
-            console.log("After removing content BOT_ : ", BOT_WIN_PATTERN);
+            // console.log("After removing content BOT_ : ", BOT_WIN_PATTERN);
         }
 
         function generateWinningPatternForBot(idx) {
@@ -363,7 +363,7 @@
                 case 9: BOT_WIN_PATTERN = [[1, 5, 9], [3, 6, 9], [7, 8, 9]]; break;
                 default: console.log("Error in generating BOT_WIN_PATTERN", idx);
             }
-            console.log("Generating Pattern : ", BOT_WIN_PATTERN);
+            // console.log("Generating Pattern : ", BOT_WIN_PATTERN);
         }
 
 
@@ -386,17 +386,18 @@
 
         function GetBotMove () {
 
-                console.log("Checking whether if bot can win");
+                // console.log("Checking whether if bot can win");
                 for(var i = 0; i < BOT_WIN_PATTERN.length; ++i)  {
                     if(BOT_WIN_PATTERN[i].length == 1) {
                         BotMarkPosition = BOT_WIN_PATTERN[i][0];
                     }
                 }
-                console.log("BOT ATTACK MOVE", BotMarkPosition);
+                // console.log("BOT ATTACK MOVE", BotMarkPosition);
                 return BotMarkPosition;
         }
 
         function getBotMove() {
+
             var wpatt = [
             [1, 2, 3],
             [4, 5, 6],
@@ -429,6 +430,73 @@
             return 0;
         }
 
+        // check if user has two continuous marks. Mean in next turn he is going to win.
+        function hasUserTwoContMarked() {
+            // console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            var wpatt = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+            [1, 4, 7],
+            [2, 5, 8],
+            [3, 6, 9],
+            [1, 5, 9],
+            [3, 5, 7]
+            ];
+
+            var count = 0;
+            for(var i = 0; i < wpatt.length; ++i) {
+                count = 0;
+                if(USER_BOX.indexOf(wpatt[i][0]) > -1) ++count;
+                if(USER_BOX.indexOf(wpatt[i][1]) > -1) ++count;
+                if(USER_BOX.indexOf(wpatt[i][2]) > -1) ++count;
+
+                if(count > 1) {
+                    // console.log("Yes user has two continuous marks");
+                    return true;
+                }
+            }
+            // console.log("No user has two continuous marks");
+            return false;
+        }
+
+        function isUserGoingToWinInNextStep() {
+            var wpatt = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [3, 5, 7],
+            [7, 8, 9],
+            [1, 4, 7],
+            [2, 5, 8],
+            [3, 6, 9],
+            [1, 5, 9],
+            ];
+
+            var NextMove;
+            var count = 0;
+            for(var i = 0; i < wpatt.length; ++i) {
+                count = 0;
+                if(USER_BOX.indexOf(wpatt[i][0]) > -1) ++count;
+                if(USER_BOX.indexOf(wpatt[i][1]) > -1) ++count;
+                if(USER_BOX.indexOf(wpatt[i][2]) > -1) ++count;
+
+                if(count > 1) {
+                    if( !(USER_BOX.indexOf(wpatt[i][0]) > -1)) NextMove = wpatt[i][0];
+                    if( !(USER_BOX.indexOf(wpatt[i][1]) > -1)) NextMove = wpatt[i][1];
+                    if( !(USER_BOX.indexOf(wpatt[i][2]) > -1)) NextMove = wpatt[i][2];
+                    console.log(wpatt[i]);
+                    console.log(NextMove);
+                    if( !(BOT_BOX.indexOf(NextMove) > -1)) {
+                        return NextMove;
+                    }
+                }
+            }
+            // return NextMove;
+
+            // console.log("No user has two continuous marks");
+            return 0;
+        }
+
 
         // makes decision w.r.t user's recent input
         function addBotInput(idx) {
@@ -446,40 +514,47 @@
             // remove already marked content from it.
             removeMarkedContent();
 
+
+            /*
+                1. when user has already two continous marks and is going to win. so block that BOX
+                2.
+
+             */
+
             var BotMarkPosition;
 
-            var xtemp;
-            if((xtemp = getBotMove()) != 0) {
-                BotMarkPosition = xtemp;
-            }
-            else {
-                var min = 99999;
-                for(var i = 0; i < WIN_PATTERN.length; ++i) {
-                    var tempSize = WIN_PATTERN[i].length;
-                    if(min > tempSize && tempSize != 0)  {
-                        min = tempSize;
-                    }
+            // check for the array with min size
+            var min = 99999;
+            for(var i = 0; i < WIN_PATTERN.length; ++i) {
+                var tempSize = WIN_PATTERN[i].length;
+                if(min > tempSize && tempSize != 0)  {
+                    min = tempSize;
                 }
+            }
 
-                var tempValue = 99999;
-                var diff;
-                console.log("winning pattern : ", WIN_PATTERN);
+            var tempValue = 99999;
+            var diff;
 
-                for(var i = 0; i < WIN_PATTERN.length; ++i) {
-                    if(WIN_PATTERN[i].length == min) {
-                        for(var x = 0; x < WIN_PATTERN[i].length; ++x) {
-                            diff = Math.abs(idx - WIN_PATTERN[i][x]);
-                            if(tempValue > diff && !(BOT_BOX.indexOf(WIN_PATTERN[i][x]) > -1)) {
-                                tempValue = diff;
-                                BotMarkPosition = WIN_PATTERN[i][x];
-                            }
+            console.log(WIN_PATTERN);
+            // look to make mark on near one.
+            for(var i = 0; i < WIN_PATTERN.length; ++i) {
+                if(WIN_PATTERN[i].length == min) {
+                    for(var x = 0; x < WIN_PATTERN[i].length; ++x) {
+                        diff = Math.abs(idx - WIN_PATTERN[i][x]);
+                        if(tempValue > diff && !(BOT_BOX.indexOf(WIN_PATTERN[i][x]) > -1)) {
+                            tempValue = diff;
+                            BotMarkPosition = WIN_PATTERN[i][x];
                         }
                     }
                 }
             }
 
-
-            console.log("BOT STEP : ", BotMarkPosition);
+            // At this point we have nearest distance to mark.
+            var NewNextMove = isUserGoingToWinInNextStep();
+            if((typeof NewNextMove != 'undefined') && NewNextMove != 0) {
+                BotMarkPosition = NewNextMove;
+            }
+            console.log("Next step by BOT: ", BotMarkPosition);
 
             // in-order to avoid repeated numbers in the array
             if (!(BOT_BOX.indexOf(BotMarkPosition) > -1))
@@ -487,7 +562,6 @@
 
             // make mark on board
             var tagId = "box" + BotMarkPosition;
-            console.log(tagId);
             var elem = document.getElementById(tagId);
             elem.innerHTML = "";
             elem.style.background = "none";
@@ -518,8 +592,6 @@
             else { // if not then play it.
                 addUserInput(id, idx);
 
-                console.log("State_Selected : ", STATE_SELECTED);
-
                 // check with current state of variables.
                 if(hasUserWon()) {
                     showWonMsg(); //------------------------------------------> EXIT
@@ -531,7 +603,7 @@
 
                 addBotInput(idx);
 
-                console.log("State_Selected : ", STATE_SELECTED);
+                // console.log("State_Selected : ", STATE_SELECTED);
 
                 // check with current state of variables
                 if(hasBotWon()) {
