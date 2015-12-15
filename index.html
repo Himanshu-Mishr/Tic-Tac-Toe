@@ -71,6 +71,15 @@
 
             <br>
 
+
+
+    <script>
+
+   </script>
+
+<audio id="audio" src="sound/beep.mp3" hidden="true" ></audio>
+
+
             <br>
             <table class="table text-center">
                 <tbody>
@@ -169,6 +178,12 @@
                     // show_notification(status);
                 });
         }
+
+
+  function play(){
+       var audio = document.getElementById("audio");
+       audio.play();
+    }
 
         function showDrawMsg() {
             replacePage("draw.html",
@@ -603,6 +618,8 @@
                 showNoticeAlreadyPlayed(idx);
             }
             else { // if not then play it.
+
+                play();
                 addUserInput(id, idx);
 
                 // check with current state of variables.
