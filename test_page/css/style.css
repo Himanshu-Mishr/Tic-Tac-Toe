@@ -59,7 +59,7 @@
 
 
 
-/* Style rules for slide 2*/
+/* configuration for slide 2*/
 #slide-2 {
 	background: #EBEBEB;
 	color: #4D4D4D;
@@ -74,4 +74,56 @@
 	font-size: 114%;
 	padding-bottom: 10%;
 }
+
+/* configuration for slide 3*/
+#slide-3 {
+		/*background: black;*/
+	color: white;
+  background: url(../image/team-image2.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  box-shadow: inset 0px  0px  300px  10px #371B52;
+
+  min-width: 100%;
+  min-height: 100%;
+  background-color: #371B52;
+  text-shadow: 0 1px 5px rgba(0,0,0,.5);
+
+}
+
+#slide-3-heading {
+	padding-top: 10%;
+	padding-bottom: 1%;
+}
+
+
+.slide-3-culture-card {
+	background: none;
+	border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
