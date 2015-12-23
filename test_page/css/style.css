@@ -133,6 +133,36 @@
             }
 
 
+/* Slide 4 */
+#slide-4 {
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 5%;
+}
+#staff-large {
+	max-width: 96%;
+}
+
+.staff-thumbnail {
+	margin-top: 26%;
+	margin-bottom: 26%;
+}
+
+.staff-thumbnail:first-child {
+	margin-top: 0px;
+}
+.staff-thumbnail:last-child {
+	margin-bottom: 0px;
+}
+
+.staff-thumbnail > img:hover {
+	box-shadow: 0px 0px 5px 1px #424242;
+}
+
 
 
 
