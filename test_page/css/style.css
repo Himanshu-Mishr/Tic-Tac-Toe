@@ -117,7 +117,7 @@
                 margin-top: 10px;
                 margin-bottom: 10px;
                 padding: 0px;
-                box-shadow: 1px 1px 200px 1px #000;
+                box-shadow: 1px 1px 20px 1px #000;
             }
             .slick-active, .slick-current, .slick-center{
                 padding: 0px;
@@ -125,7 +125,7 @@
                 width: 500px;
             }
             .slick-list {
-                overflow: visible;
+                /*overflow: visible;*/
             }
             .slick-slide{
                 z-index: -1;
@@ -180,4 +180,8 @@
 	padding-bottom: 5%;
 }
 
+.job-link, .job-link:hover {
+	text-decoration: none;
+	color: black;
+}
 
