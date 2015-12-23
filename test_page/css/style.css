@@ -169,7 +169,14 @@
 #slide-5 {
 	margin-top: 7%;
     margin-bottom: 7%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
+.slide-5-job-category {
+	color: #DC403B;
+	font-weight: bolder;
+	padding-bottom: 7%;
+}
 
 
