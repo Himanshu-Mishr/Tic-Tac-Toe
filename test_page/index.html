@@ -7,15 +7,16 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Careers @ Cozee</title>
         <!--Offline version and live version Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
         <!-- Stylesheet for awesome font -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous"> -->
+        <!-- Custom Style Sheet for this page -->
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <!-- welcome slide -->
-        <div id="slide-1" class="media-cover-dark">
+        <!------------------------- welcome slide ---------------------------->
+        <div id="slide-1">
             <div class="row">
                 <div class="text-xs-center
                     col-xs-12 col-xs-offset-0
@@ -41,7 +42,7 @@
             </div>
             <br><br><br><br>
         </div>
-        <!-- mission slide -->
+        <!--------------------------- mission slide -------------------------->
         <div id="slide-2">
             <div class="row">
                 <div class="text-xs-center
@@ -65,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <!-- culture slide -->
+        <!--------------------------------- culture slide -------------------->
         <div id="slide-3">
             <div class="row">
                 <div class="text-xs-center
@@ -81,56 +82,74 @@
                 <div class="container">
                     <div class="card-columns">
                         <div class="card slide-3-culture-card card-block card-inverse text-xs-left">
-                            <blockquote class="card-blockquote">
-                                <p> <i class="fa fa-circle"></i>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                                <footer>
-                                    <small>
-                                    </small>
-                                </footer>
-                            </blockquote>
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <i class="fa fa-square"></i>
+                                    </div>
+                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card slide-3-culture-card card-block card-inverse text-xs-left">
-                            <blockquote class="card-blockquote">
-                                <p> <i class="fa fa-circle"></i>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                                <footer>
-                                    <small>
-                                    </small>
-                                </footer>
-                            </blockquote>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <!-- square -->
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-xs-right">
+                            <i class="fa fa-square"></i>
                         </div>
-                        <div class="card slide-3-culture-card card-block card-inverse text-xs-left">
-                            <blockquote class="card-blockquote">
-                                <p> <i class="fa fa-circle"></i>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                                <footer>
-                                    <small>
-                                    </small>
-                                </footer>
-                            </blockquote>
+                        <!-- text -->
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </div>
+                        <!-- square -->
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-xs-right">
+                            <i class="fa fa-square"></i>
+                        </div>
+                        <!-- text -->
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </div>
+                        <!-- square -->
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-xs-right">
+                            <i class="fa fa-square"></i>
+                        </div>
+                        <!-- text -->
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
                         </div>
                     </div>
                 </div>
             </div>
+            <div id="slide-3-image-slide">
+            </div>
         </div>
         <div class="container-fluid">
-            <!-- staff testimonial -->
+            <!------------------------- staff testimonial -------------------->
             <div id="slide-4">
                 we have slides here too
             </div>
-            <!-- Job opening -->
+            <!------------------------- Job opening -------------------------->
             <div id="slide-5">
                 we have slides here too
             </div>
         </div>
-        <script src="js/jquery.min.js"></script>
+        <!---------------------------- Script Files -------------------------->
+        <!-- Fix for uncaught error for tether.js -->
+        <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
+        <!-- Offline/Online version of JQuery -->
+        <!--         <script src="js/jquery.min.js"></script>
         <script>
         window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"><\/script>')
-        </script>
-        <script src="js/bootstrap.min.js"></script>
+        </script> -->
+        <!-- Bootstrap Js file -->
+        <!-- <script src="js/bootstrap.min.js"></script> -->
         <!-- Live version jQuery first, then Bootstrap JS. -->
-        <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-        -->
-        <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
         <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
         <script src="js/holder.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

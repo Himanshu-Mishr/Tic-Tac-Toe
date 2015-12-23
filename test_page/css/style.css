@@ -1,8 +1,4 @@
-/*body {
-    background: green;
-}
-
-.navbar {
+/*.navbar {
     background: none;
 }
 
@@ -14,116 +10,85 @@
 }
 */
 
-#cover-image {
-	min-height: 100%;
-}
-
 
 /* configuration related to slide 1*/
+
 #slide-1 {
-	/*background: black;*/
-	color: white;
-  background: url(../image/team-image.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-  box-shadow: inset 0px  0px  300px  1px #000;
-
-  min-width: 100%;
-  min-height: 100%;
-  background-color: #666;
-  text-shadow: 0 1px 5px rgba(0,0,0,.5);
-
+    /*background: black;*/
+    color: white;
+    background: url(../image/team-image.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    box-shadow: inset 0px 0px 300px 1px #000;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #666;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, .5);
 }
 
 #slide-1-heading {
-	height: 100%;
-	padding-top: 11%;
+     padding-top: 11%;
 }
 
 #slide-1-msg {
-	height: 100%;
-	padding: 1%;
-	background: #333333;
-	margin-top: 10%;
-	opacity: 0.7;
+    padding: 1%;
+    background: #333333;
+    margin-top: 10%;
+    opacity: 0.7;
 }
 
 #slide-1-button {
-	height: 100%;
-	padding-top: 7%;
-	text-shadow: none;
+    padding-top: 7%;
+    text-shadow: none;
 }
-
 
 
 /* configuration for slide 2*/
+
 #slide-2 {
-	background: #EBEBEB;
-	color: #4D4D4D;
+    background: #EBEBEB;
+    color: #4D4D4D;
 }
 
 #slide-2-heading {
-	padding-top: 10%;
-	padding-bottom: 1%;
+    padding-top: 10%;
+    padding-bottom: 1%;
 }
 
 #slide-2-msg {
-	font-size: 114%;
-	padding-bottom: 10%;
+    font-size: 114%;
+    padding-bottom: 10%;
 }
 
+
 /* configuration for slide 3*/
+
 #slide-3 {
-		/*background: black;*/
-	color: white;
-  background: url(../image/team-image2.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    color: white;
+    background: url(../image/team-image2.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    box-shadow: inset 0px 0px 300px 10px #371B52;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #371B52;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, .5);
+}
 
-  box-shadow: inset 0px  0px  300px  10px #371B52;
-
-  min-width: 100%;
-  min-height: 100%;
-  background-color: #371B52;
-  text-shadow: 0 1px 5px rgba(0,0,0,.5);
-
+.icons {
+	text-align: right;
 }
 
 #slide-3-heading {
-	padding-top: 10%;
-	padding-bottom: 1%;
+    padding-top: 10%;
+    padding-bottom: 1%;
 }
-
 
 .slide-3-culture-card {
-	background: none;
-	border: none;
+    background: none;
+    border: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
