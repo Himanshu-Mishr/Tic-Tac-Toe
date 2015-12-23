@@ -141,7 +141,8 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    margin: 5%;
+    margin-top: 7%;
+    margin-bottom: 7%;
 }
 #staff-large {
 	/*max-width: 96%;*/
@@ -164,7 +165,11 @@
 }
 
 
-
+/* configuration for slide 5*/
+#slide-5 {
+	margin-top: 7%;
+    margin-bottom: 7%;
+}
 
 
 
