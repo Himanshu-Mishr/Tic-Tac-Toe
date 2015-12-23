@@ -11,6 +11,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
         <!-- Stylesheet for awesome font -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
         <!-- Custom Style Sheet for this page -->
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -81,7 +85,7 @@
             <div id="slide-3-cards">
                 <div class="container">
                     <div class="card-columns">
-                        <div class="card slide-3-culture-card card-block card-inverse text-xs-left">
+                        <div class="card slide-3-culture-card text-xs-left">
                             <div class="row">
                                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                     <i class="fa fa-square" style="color:#FCAD13"></i>
@@ -91,7 +95,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card slide-3-culture-card card-block card-inverse text-xs-left">
+                        <div class="card slide-3-culture-card text-xs-left">
                             <div class="row">
                                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                     <i class="fa fa-square" style="color:#FD4D00"></i>
@@ -101,7 +105,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card slide-3-culture-card card-block card-inverse text-xs-left">
+                        <div class="card slide-3-culture-card text-xs-left">
                             <div class="row">
                                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                     <i class="fa fa-square"  style="color:#10C113"></i>
@@ -115,6 +119,19 @@
                 </div>
             </div>
             <div id="slide-3-image-slide">
+
+        <div class="slide-class">
+            <div class="image-cover">
+                <img  src="../image/slide1.jpg" alt="slide 1">
+            </div>
+            <div class="image-cover">
+                <img  src="../image/slide4.jpg" alt="slide 1">
+            </div>
+            <div class="image-cover">
+                <img  src="../image/slide3.jpg" alt="slide 1">
+            </div>
+        </div>
+
             </div>
         </div>
         <div class="container-fluid">
@@ -140,6 +157,10 @@
         <!-- Live version jQuery first, then Bootstrap JS. -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
+        <!-- Slick Slider JS -->
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+
         <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
         <script src="js/holder.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -150,5 +171,19 @@
         </defs>
         <text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text>
         </svg>
+                <script>
+        $(document).ready(function(){
+            $('.slide-class').slick({
+                // settings Key-value pair
+                slidesToShow: 1,
+                centerMode: true,
+                centerPadding: "50px",
+                focusOnSelect: true,
+                variableWidth: true,
+                responsive: "unslick"
+            });
+        });
+
+        </script>
     </body>
 </html>
