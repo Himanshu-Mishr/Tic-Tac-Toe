@@ -149,13 +149,14 @@
 }
 
 .staff-thumbnail {
-	margin-top: 26%;
-	margin-bottom: 26%;
+	margin-top: 32%;
+	margin-bottom: 32%;
 }
 
 .staff-thumbnail:first-child {
 	margin-top: 0px;
 }
+
 .staff-thumbnail:last-child {
 	margin-bottom: 0px;
 }
