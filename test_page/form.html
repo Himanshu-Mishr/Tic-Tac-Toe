@@ -7,6 +7,8 @@
         <title>Job Form</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+        <!-- Bootstrap Form Helpers -->
+        <link href="css/bootstrap-formhelpers.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="css/formstyle.css">
     </head>
     <body>
@@ -74,41 +76,40 @@
                             </div>
                             <hr>
                             <!-- first name -->
-                            <div class="form-group row">
-                                <label for="name" class="col-sm-2 form-control-label">Name <span style="color:red;">*</span></label>
+                            <div class="form-group row" id="name_class">
+                                <label for="name" class="col-sm-2 form-control-label" style="color:black;">Name <span style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="name" placeholder="">
+                                    <input class="form-control" type="text" onblur="validateName();" id="name" placeholder="">
                                 </div>
                             </div>
                             <!-- Email -->
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 form-control-label">Email <span style="color:red;">*</span></label>
+                            <div class="form-group row" id="email_class">
+                                <label for="inputEmail3" style="color:black;" class="col-sm-2 form-control-label">Email <span style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                                    <input class="form-control" type="email" onblur="validateEmail();" id="email" placeholder="">
                                 </div>
                             </div>
                             <!-- Phone number -->
-                            <div class="form-group row">
-                                <label for="phone" class="col-sm-2 form-control-label">Phone No. <span style="color:red;">*</span></label>
+                            <div class="form-group row" id="phone_class">
+                                <label for="phone"  style="color:black;"  class="col-sm-2 form-control-label">Phone No. <span style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="tel" class="form-control" id="phonenumber" placeholder="">
+                                    <input class="form-control bfh-phone" type="text"  onblur="validatePhone();"  data-format="+91 dddd-ddd-ddd" id="phone">
                                 </div>
                             </div>
                             <!-- resume -->
-                            <div class="form-group row">
+                            <div class="form-group row" id="resume_class">
                                 <label for="resume" class="col-sm-2 form-control-label">Resume/CV<span style="color:red;">*</span></label>
                                 <div class="col-sm-6">
                                     <label class="file">
-                                        <input type="file" id="file">
-                                        <span class="file-custom"></span>
+                                        <input class="form-control" type="file" id="resume" style="opacity:1;" onchange="validateFile();" >
                                     </label>
                                 </div>
                                 <div class="col-sm-4 pull-xs-right">
-                                    Pdf or Docx
+                                <p class="text-muted">File Format: pdf or docx</p>
                                 </div>
                             </div>
                             <!-- Cover letter -->
-                            <div class="form-group row">
+                            <div class="form-group row" id="cover_letter_class">
                                 <label for="coverletter" class="col-sm-2 form-control-label"></label>
                                 <div class="col-sm-10">
                                     <div class="row">
@@ -118,7 +119,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                            <textarea class="form-control" rows="3" id="cover_letter"  onblur="validateCoverLetter();" ></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -163,9 +164,12 @@
                 </div>
             </div>
         </div>
+        <script src="script.js"></script>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <!-- Bootstrap JavaScript -->
         <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+        <!-- form helper -->
+        <script src="js/bootstrap-formhelpers.min.js"></script>
     </body>
 </html>
