@@ -11,7 +11,7 @@
         <link href="css/bootstrap-formhelpers.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="css/formstyle.css">
     </head>
-    <body>
+    <body onload="init();">
         <div id="form">
             <div class="container" id="heading">
                 <nav class="navbar navbar-light bg-faded">
@@ -91,9 +91,14 @@
                             </div>
                             <!-- Phone number -->
                             <div class="form-group row" id="phone_class">
-                                <label for="phone"  style="color:black;"  class="col-sm-2 form-control-label">Phone No. <span style="color:red;">*</span></label>
-                                <div class="col-sm-10">
-                                    <input class="form-control bfh-phone" type="text"  onkeydown="restoreStyle('phone', 'phone_class');" onkeyup="validatePhone();" onblur="validatePhone();"  data-format="+91 dddd-ddd-ddd" id="phone">
+                                <label for="phone"  style="color:black;"  class="col-sm-2 form-control-label">Phone No.
+                                <span style="color:red;">*</span></label>
+                                <div class="col-sm-4">
+                                    <select class="form-control" id="countryCode" style="border-color:#CCC;">
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input class="form-control bfh-phone" onkeydown="restoreStyle('phone', 'phone_class');" onkeyup="validatePhone();" onblur="validatePhone();" maxlength="10" type="tel" id="phone" name="phone">
                                 </div>
                             </div>
                             <!-- resume -->
@@ -105,7 +110,7 @@
                                     </label>
                                 </div>
                                 <div class="col-sm-4 pull-xs-right">
-                                <p class="text-muted">File Format: pdf or docx</p>
+                                    <p class="text-muted">File Format: pdf or docx</p>
                                 </div>
                             </div>
                             <!-- Cover letter -->
@@ -126,7 +131,7 @@
                             </div>
                             <hr>
                             <!-- Linkedin Profile -->
-                            <div class="form-group row" id="linkedin_class">
+                            <div class="form-group row" id="URLlinkedin_class">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                         Linkedin Profile
@@ -134,12 +139,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <input  class="form-control" type="text" id="location" placeholder="Enter your profile URL"  onblur="validateURL('linkedin');"  id="linkedin">
+                                        <input  class="form-control" type="text" placeholder="Enter your profile URL"  onblur="validateURL('URLlinkedin', 'URLlinkedin_class');"  id="URLlinkedin">
                                     </div>
                                 </div>
                             </div>
                             <!-- Github Profile -->
-                            <div class="form-group row" id="github_class">
+                            <div class="form-group row" id="URLgithub_class">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                         Github Profile
@@ -147,7 +152,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <input class="form-control" type="text" id="location" placeholder="Enter your profile URL"  onblur="validateURL('github');" id="github">
+                                        <input class="form-control" type="text" placeholder="Enter your profile URL"  onblur="validateURL('URLgithub', 'URLgithub_class');" id="URLgithub">
                                     </div>
                                 </div>
                             </div>
@@ -170,6 +175,6 @@
         <!-- Bootstrap JavaScript -->
         <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
         <!-- form helper -->
-        <script src="js/bootstrap-formhelpers.min.js"></script>
+        <script src="country_phone_number.js"></script>
     </body>
 </html>
