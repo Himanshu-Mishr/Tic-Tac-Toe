@@ -12,3 +12,7 @@
 	background: #F9FBBA;
 	margin-bottom: 3%;
 }
+
+#required {
+	color: red;
+}
