@@ -14,6 +14,10 @@
 	margin-bottom: 3%;
 }
 
-#required {
-	color: red;
+body {
+	background: #EEE;
+}
+
+#form {
+	background:white;
 }
