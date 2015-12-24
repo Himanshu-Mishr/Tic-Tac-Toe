@@ -138,7 +138,7 @@ function validateURL(elementName, elementNameClass) {
 	}
 
 	if(elementName == "URLgithub") {
-		var string =  url_value, substring = "github";
+		var string =  url_value, substring = "github.com";
 		if (string.indexOf(substring) > -1) {
 	   		document.getElementById(elementNameClass).attributes[0].value = "form-group row has-success";
 	   		document.getElementById(elementName).attributes[0].value = "form-control form-control-success";

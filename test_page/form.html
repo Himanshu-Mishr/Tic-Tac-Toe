@@ -139,7 +139,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <input  class="form-control" type="text" placeholder="Enter your profile URL"  onblur="validateURL('URLlinkedin', 'URLlinkedin_class');"  id="URLlinkedin">
+                                        <input  class="form-control"
+                                        onkeydown="restoreStyle('URLlinkedin', 'URLlinkedin_class');"
+                                        onkeyup="validateURL('URLlinkedin', 'URLlinkedin_class');"
+                                        type="text"
+                                        placeholder="Enter your profile URL"
+                                        onblur="validateURL('URLlinkedin', 'URLlinkedin_class');"
+                                        id="URLlinkedin">
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +158,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <input class="form-control" type="text" placeholder="Enter your profile URL"  onblur="validateURL('URLgithub', 'URLgithub_class');" id="URLgithub">
+                                        <input class="form-control"
+                                        onkeyup="validateURL('URLgithub', 'URLgithub_class');"
+                                        type="text"
+                                        onkeydown="restoreStyle('URLgithub', 'URLgithub_class');"
+                                        placeholder="Enter your profile URL"
+                                        onblur="validateURL('URLgithub', 'URLgithub_class');"
+                                        id="URLgithub">
                                     </div>
                                 </div>
                             </div>
