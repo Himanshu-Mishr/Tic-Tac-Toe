@@ -88,6 +88,11 @@ function validateCoverLetter() {
 	}
 }
 
+function restoreStyle(innerInput, outerFieldSet) {
+		document.getElementById(innerInput).attributes[0].value = "form-control form-control-primary";
+		document.getElementById(outerFieldSet).attributes[0].value = "form-group row";
+}
+
 
 
 

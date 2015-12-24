@@ -79,26 +79,26 @@
                             <div class="form-group row" id="name_class">
                                 <label for="name" class="col-sm-2 form-control-label" style="color:black;">Name <span style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="text" onblur="validateName();" id="name" placeholder="">
+                                    <input class="form-control" type="text" onkeydown="restoreStyle('name', 'name_class');" onkeyup="validateName();" onblur="validateName();" id="name" placeholder="">
                                 </div>
                             </div>
                             <!-- Email -->
                             <div class="form-group row" id="email_class">
                                 <label for="inputEmail3" style="color:black;" class="col-sm-2 form-control-label">Email <span style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="email" onblur="validateEmail();" id="email" placeholder="">
+                                    <input class="form-control" type="email"  onkeydown="restoreStyle('email', 'email_class');" onkeyup="validateEmail();" onblur="validateEmail();" id="email" placeholder="">
                                 </div>
                             </div>
                             <!-- Phone number -->
                             <div class="form-group row" id="phone_class">
                                 <label for="phone"  style="color:black;"  class="col-sm-2 form-control-label">Phone No. <span style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input class="form-control bfh-phone" type="text"  onblur="validatePhone();"  data-format="+91 dddd-ddd-ddd" id="phone">
+                                    <input class="form-control bfh-phone" type="text"  onkeydown="restoreStyle('phone', 'phone_class');" onkeyup="validatePhone();" onblur="validatePhone();"  data-format="+91 dddd-ddd-ddd" id="phone">
                                 </div>
                             </div>
                             <!-- resume -->
                             <div class="form-group row" id="resume_class">
-                                <label for="resume" class="col-sm-2 form-control-label">Resume/CV<span style="color:red;">*</span></label>
+                                <label for="resume"  style="color:black;"  class="col-sm-2 form-control-label">Resume/CV<span style="color:red;">*</span></label>
                                 <div class="col-sm-6">
                                     <label class="file">
                                         <input class="form-control" type="file" id="resume" style="opacity:1;" onchange="validateFile();" >
@@ -110,7 +110,7 @@
                             </div>
                             <!-- Cover letter -->
                             <div class="form-group row" id="cover_letter_class">
-                                <label for="coverletter" class="col-sm-2 form-control-label"></label>
+                                <label for="coverletter"  style="color:black;"  class="col-sm-2 form-control-label"></label>
                                 <div class="col-sm-10">
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -119,14 +119,14 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <textarea class="form-control" rows="3" id="cover_letter"  onblur="validateCoverLetter();" ></textarea>
+                                            <textarea class="form-control" rows="3"  onkeydown="restoreStyle('cover_letter', 'cover_letter_class');" onkeyup="validateCoverLetter();" id="cover_letter"  onblur="validateCoverLetter();" ></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <hr>
                             <!-- Linkedin Profile -->
-                            <div class="form-group row">
+                            <div class="form-group row" id="linkedin_class">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                         Linkedin Profile
@@ -134,12 +134,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <input type="text" class="form-control" id="location" placeholder="Enter your profile URL">
+                                        <input  class="form-control" type="text" id="location" placeholder="Enter your profile URL"  onblur="validateURL('linkedin');"  id="linkedin">
                                     </div>
                                 </div>
                             </div>
                             <!-- Github Profile -->
-                            <div class="form-group row">
+                            <div class="form-group row" id="github_class">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                         Github Profile
@@ -147,7 +147,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <input type="text" class="form-control" id="location" placeholder="Enter your profile URL">
+                                        <input class="form-control" type="text" id="location" placeholder="Enter your profile URL"  onblur="validateURL('github');" id="github">
                                     </div>
                                 </div>
                             </div>
