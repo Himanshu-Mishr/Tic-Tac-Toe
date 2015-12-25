@@ -91,7 +91,6 @@ var country_phone_data = {
     "Hong Kong": "852",
     "Hungary": "36",
     "Iceland": "354",
-    "India": "91",
     "Indonesia": "62",
     "Iran": "98",
     "Iraq": "964",

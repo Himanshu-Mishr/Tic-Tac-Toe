@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Title Page</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<style>
+		#imgBlockId0 {
+			box-shadow: 0px 0px 1px 1px black;
+			margin-right: -2%;
+			z-index: -999;
+		}
+		#imgBlockId1 {
+			box-shadow: 0px 0px 10px 1px black;
+			width: 20%;
+			margin-right: -2%;
+			z-index: -99;
+		}
+		#imgBlockId2 {
+			box-shadow: 0px 0px 20px 1px black;
+			width: 23%;
+			z-index: 9999;
+		}
+		#imgBlockId3 {
+			box-shadow: 0px 0px 10px 1px black;
+			width: 20%;
+			  top: 0px;
+			z-index: -9;
+			margin-left: -2%;
+		}
+		#imgBlockId4 {
+			box-shadow: 0px 0px 1px 1px black;
+			z-index: -999;
+			margin-left: -2%;
+		}
+
+		.imgBlockClass {
+
+			}
+		#slide {
+			/*display: block;*/
+			/*flex-wrap: nowrap;*/
+			/*position: absolute;*/
+			 /*left:0;*/
+		    /*right:0;*/
+		    /*position: relative;*/
+		   /*width: 100vw;*/
+		    /*left: calc(-50vw + 50%);*/
+
+		    /*background: none repeat scroll 0 0 white;*/
+		    height: 300px;
+		    left: 50%;
+		    margin-left: -700px;
+		    margin-top: -150px;
+		    position: absolute;
+		    top: 50%;
+		    width: 1400px;
+		}
+			.divImageBlockClass {
+				/*float: left;*/
+				padding: 5px;
+				/*left: 0;*/
+				/*right: 0;*/
+
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+	<body onload="loadSlide()">
+	<br>
+	<div id="slide">
+
+	</div>
+		<!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="slide.js"></script>
+	</body>
+</html>
