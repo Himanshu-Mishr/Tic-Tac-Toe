@@ -1,5 +1,5 @@
 .navbar {
-    background: none;
+	background: none;
 }
 
 .jf {
@@ -15,10 +15,16 @@
 }
 
 body {
-	background: #EEE;
+	background: #354458;
 }
 
-#form {
+.container{
 	background:white;
 }
 
+
+#form {
+	box-shadow: 0px 10px 100px 1px black;
+}
+#heading {
+}
