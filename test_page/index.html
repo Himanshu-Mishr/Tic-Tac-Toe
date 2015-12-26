@@ -22,7 +22,7 @@
 
     <style>
     .owl-carousel {
-
+        z-index: 999999px;
     }
     .active {
     }
@@ -297,15 +297,15 @@
                 loop:true,
                 margin: 10,
                 items:3,
+                dots:false,
                 center: true,
-                nav:false,
                 stagePadding: 340, // to show how much content will be visible
                 responsive:{    // screen size and respective no. of item that you want to see.
                     0:{
-                        items:1
+                        items:1,
                     },
                     600:{
-                        items:1
+                        items:1,
                     },
                     1000:{
                         items:1
