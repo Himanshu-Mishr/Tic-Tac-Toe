@@ -3,7 +3,7 @@
 }
 
 #logo-photo {
-	display: table;
+    display: table;
     float: left;
     width: 34%;
     padding-left: 23%;
@@ -29,7 +29,7 @@
 }
 
 #slide-1-heading {
-     padding-top: 11%;
+    padding-top: 11%;
 }
 
 #slide-1-msg {
@@ -79,8 +79,6 @@
     text-shadow: 0 1px 5px rgba(0, 0, 0, .5);
 }
 
-
-
 #slide-3-heading {
     padding-top: 10%;
     padding-bottom: 1%;
@@ -90,50 +88,23 @@
     background: none;
     border: none;
 }
-.card {
-	margin:0px;
-	padding:0px;
 
+.card {
+    margin: 0px;
+    padding: 0px;
 }
 
-            /* default image rule*/
-            .image-cover > img {
-                width: 45%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            /*Default State of Slide*/
-            .slick-slide > img {
-                margin-top: 34px;
-                margin-bottom: 34px;
-                width: 500px;
-            }
-            /*Active State of slide*/
-            .slick-active > img, .slick-center >img, .slick-current > img {
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-                /*width: 100%;*/
-                margin-top: 10px;
-                margin-bottom: 10px;
-                padding: 0px;
-                box-shadow: 1px 1px 20px 1px #000;
-            }
-            .slick-active, .slick-current, .slick-center{
-                padding: 0px;
-                background: none;
-                width: 500px;
-            }
-            .slick-list {
-                /*overflow: visible;*/
-            }
-            .slick-slide{
-                z-index: -1;
-                width: 7%;
-            }
+
+/* Style rules related to slide */
+
+.center {
+    box-shadow: 0px 0px 100px 1px black;
+    z-index: 9999;
+}
 
 
 /* Slide 4 */
+
 #slide-4 {
     min-width: 100%;
     min-height: 100%;
@@ -144,44 +115,45 @@
     margin-top: 7%;
     margin-bottom: 7%;
 }
+
 #staff-large {
-	/*max-width: 96%;*/
+    /*max-width: 96%;*/
 }
 
 .staff-thumbnail {
-	margin-top: 32%;
-	margin-bottom: 32%;
+    margin-top: 32%;
+    margin-bottom: 32%;
 }
 
 .staff-thumbnail:first-child {
-	margin-top: 0px;
+    margin-top: 0px;
 }
 
 .staff-thumbnail:last-child {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .staff-thumbnail > img:hover {
-	box-shadow: 0px 0px 5px 1px #424242;
+    box-shadow: 0px 0px 5px 1px #424242;
 }
 
 
 /* configuration for slide 5*/
+
 #slide-5 {
-	margin-top: 7%;
+    margin-top: 7%;
     margin-bottom: 7%;
     /*margin-left: 10%;*/
     /*margin-right: 10%;*/
 }
 
 .slide-5-job-category {
-	color: #DC403B;
-	font-weight: bolder;
-	padding-bottom: 5%;
+    color: #DC403B;
+    font-weight: bolder;
+    padding-bottom: 5%;
 }
 
 .job-link, .job-link:hover {
-	text-decoration: none;
-	color: black;
+    text-decoration: none;
+    color: black;
 }
-
