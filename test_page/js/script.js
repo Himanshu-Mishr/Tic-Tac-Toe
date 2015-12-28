@@ -38,11 +38,11 @@
                     break;
                 case 2:
                     staff_large_photo.src = "image/staff2_large.jpg";
-                    about_staff.innerHTML = "<b>OPERATION</b><h1>Michael</h1><hr><b>What do you do at Cozee ?</b><br><p>I manage and I am responsible for all People Operations here at Quid.</p><b>What's special about the people at Quid?</b><br><p>They're all independent go-getters with a common purpose.</p>"
+                    about_staff.innerHTML = "<b>OPERATION</b><h1>Michael</h1><hr><b>What do you do at Cozee ?</b><br><p>I manage and I am responsible for all People Operations here at Quid. I love innovating in this space and constantly think about new data sets and features to add for our healthcare users. In addition, I lead many client services projects and continue to build strong relationships with our expanding client base.</p><b>What's special about the people at Quid?</b><br><p>They're all independent go-getters with a common purpose.</p>"
                     break;
                 case 3:
                     staff_large_photo.src = "image/staff3_large.jpg";
-                    about_staff.innerHTML = "<b>COMMERCIAL TEAM</b><h1>Emily</h1><hr><b>What do you do at Cozee ?</b><br><p>I'm currently focused on growing the Quid healthcare team and I'm responsible for identifying the overlap between healthcare user needs and Quid capabilities. I love innovating in this space and constantly think about new data sets and features to add for our healthcare users. In addition, I lead many client services projects and continue to build strong relationships with our expanding client base.</p><b>What do you like best about your job?</b><br><p>I love helping users understand how Quid can map the evolution of human thought - from patient discussions to scientific research to start up ideas - and how that can lead to major business value.</p>"
+                    about_staff.innerHTML = "<b>COMMERCIAL TEAM</b><h1>Emily</h1><hr><b>What do you do at Cozee ?</b><br><p>I'm currently focused on growing the Quid healthcare team and I'm responsible for identifying the overlap between healthcare user needs and Quid capabilities.</p><b>What do you like best about your job?</b><br><p>I love helping users understand how Quid can map the evolution of human thought - from patient discussions to scientific research to start up ideas - and how that can lead to major business value.</p>"
                     break;
                 default:
                     staff_large_photo.src = "image/staff1_large.jpg";
