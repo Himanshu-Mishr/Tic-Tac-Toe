@@ -5,6 +5,7 @@
                 items: 3,
                 dots: false,
                 center: true,
+                autoplay: true,
                 stagePadding: 340, // to show how much content will be visible
                 responsive: { // screen size and respective no. of item that you want to see.
                     0: {

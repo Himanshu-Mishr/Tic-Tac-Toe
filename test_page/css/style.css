@@ -67,11 +67,11 @@
 
 #slide-3 {
     color: white;
-    background: url(../image/team-image2.jpg) no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    /*background: url(../image/team-image2.jpg) no-repeat center center;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
     box-shadow: inset 0px 0px 300px 10px #371B52;
     min-width: 100%;
     min-height: 100%;
