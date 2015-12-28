@@ -28,13 +28,13 @@
 }
 
 #slide-1-heading {
-    padding-top: 20vh;
+    padding-top: 14vh;
 }
 
 #slide-1-msg {
     padding: 1%;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.7);
-    margin-top: 16vh;
+    margin-top: 18vh;
 }
 
 #slide-1-button {
