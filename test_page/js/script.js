@@ -3,9 +3,11 @@
                 loop: true,
                 margin: 10,
                 items: 3,
-                // dots: false,
-                center: true,
+                dots: false,
                 autoplay: true,
+                // dots:false,
+                nav:true,
+                navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
                 // nav:true,
                 // stagePadding: 340, // to show how much content will be visible
                 responsive: { // screen size and respective no. of item that you want to see.
@@ -20,6 +22,7 @@
                     1000: {
                         items: 1,
                         stagePadding: 340,
+                        center:true,
                     }
                 }
             })

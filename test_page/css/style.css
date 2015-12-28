@@ -104,7 +104,46 @@
     box-shadow: 0px 0px 100px 1px black;
     z-index: 9999;
 }
+.owl-theme .owl-controls .owl-buttons div{
+    color: #FFF;
+    display: inline-block;
+}
 
+.owl-stage-outer {
+    position: relative;
+}
+.owl-controls {
+    position: absolute;
+    top: 34%;
+}
+
+.fa {
+    font-size: 250%;
+}
+
+.owl-nav, .owl-controls {
+    font-size: 43%;
+    width: 100%;
+}
+
+.owl-prev {
+    float:left;
+    background: rgba(0, 0, 0, 0.0) !important;
+}
+
+.owl-prev:hover {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+
+.owl-next {
+    float:right;
+    background: rgba(0, 0, 0, 0.0) !important;
+}
+
+.owl-next:hover {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
 
 /* Slide 4 */
 
