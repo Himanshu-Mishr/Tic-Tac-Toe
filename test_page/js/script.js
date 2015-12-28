@@ -7,16 +7,19 @@
                 center: true,
                 autoplay: true,
                 // nav:true,
-                stagePadding: 340, // to show how much content will be visible
+                // stagePadding: 340, // to show how much content will be visible
                 responsive: { // screen size and respective no. of item that you want to see.
                     0: {
                         items: 1,
+                        stagePadding: 0,
                     },
                     600: {
                         items: 1,
+                        stagePadding: 0,
                     },
                     1000: {
-                        items: 1
+                        items: 1,
+                        stagePadding: 340,
                     }
                 }
             })
