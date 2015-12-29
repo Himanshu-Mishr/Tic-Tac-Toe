@@ -10,6 +10,10 @@
 }
 */
 
+body {
+    /*font-family: raleway;*/
+}
+
 /*heading of the slide*/
 .slide-heading {
     margin-top: 7%;
@@ -92,10 +96,10 @@
     border: none;
 }
 
-.card {
+/*.card {
     margin: 0px;
     padding: 0px;
-}
+}*/
 
 
 /* Style rules related to slide */
@@ -191,7 +195,7 @@
 /* configuration for slide 5*/
 
 #slide-5 {
-    background: #f6f8ff;
+
     padding: 5%;
 }
 
@@ -199,9 +203,20 @@
     color: #DC403B;
     font-weight: bolder;
     padding-bottom: 5%;
+
 }
 
 .job-link, .job-link:hover {
     text-decoration: none;
     color: black;
+}
+
+/*-------------------*/
+.job-card  > h4{
+    font-size: 134%;
+    /*font-weight: bolder;*/
+}
+
+.job-card:hover {
+    border-color: #b6b6b6;
 }
