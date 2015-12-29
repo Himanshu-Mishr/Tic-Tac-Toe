@@ -1,4 +1,4 @@
-.navbar {
+/*.navbar {
 	background: none;
 }
 
@@ -25,4 +25,26 @@ body {
 
 #form {
 	box-shadow: 0px 10px 100px 1px black;
+}
+*/
+
+
+#heading {
+	background:#9c0f5f;
+	color: white;
+}
+
+.navbar {
+	background:#9c0f5f;
+	border-radius: 0px;
+}
+
+#logo {
+	width: 10%;
+	margin-left: 16%;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+		background:#9c0f5f;
+		border-color: #9c0f5f;
 }
