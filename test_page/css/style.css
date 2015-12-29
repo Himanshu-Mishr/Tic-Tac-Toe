@@ -220,3 +220,11 @@ body {
 .job-card:hover {
     border-color: #b6b6b6;
 }
+
+.job-extra {
+    background: #f3f3f4;
+}
+
+.job-extra:hover {
+    border-color: #b6b6b6;
+}
