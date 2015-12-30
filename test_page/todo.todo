@@ -1,0 +1,8 @@
+Handling user form submit
+
+    1. after clicking Submit button > I have to validate every form field and
+    check whether they duly filled or not.
+
+    once every field is filled then accept and submit.
+
+  
