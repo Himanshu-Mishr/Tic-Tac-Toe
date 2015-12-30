@@ -1,0 +1,38 @@
+.footp					{ 
+						color: #eee;
+						font-size: 14px;
+					}
+.link:hover				{
+						cursor:pointer;
+					}
+.hover:hover				{
+						color:#6BA0FA;
+					}			
+.footh4 				{ 
+						color: #fff;
+						font-size: 20px;
+					}
+.foot					{
+						background-color: #262626;
+						z-index:-1 !important;
+					}
+.font					{
+						font-family: 'Droid Sans', sans-serif !important;
+						font-size: 13px !important;
+					}
+.zindex					{
+						z-index:1;
+					}
+					
+					
+@media screen and (max-width: 992px){
+
+#hide					{
+						display:none !important;
+					}
+.main					{
+			  			margin-bottom:30px !important;
+	  				}
+	  	
+  				    }
+  
