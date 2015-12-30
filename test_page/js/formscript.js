@@ -3,33 +3,33 @@
  */
 function validateName() {
 	// clean and replace
-    var flag = false;
-    
+
+	var flag = false;
 	document.getElementById("name_class").attributes[0] = "form-group row";
 	document.getElementById("name").attributes[0] = "form-control";
 
 	var name = document.getElementById("name").value;
 	if(name.length == 0) return false;
 
-	if (/^[a-zA-Z ]+$/g.test(name) && name.length > 0) {
+	if (/^[a-zA-Z ]+$/g.test(name) && name.length > 1) {
    		document.getElementById("name_class").attributes[0].value = "form-group row has-success";
    		document.getElementById("name").attributes[0].value = "form-control form-control-success";
-        flag = true;
+   		flag = true;
 	}
 	else {
    		document.getElementById("name_class").attributes[0].value = "form-group row has-danger";
    		document.getElementById("name").attributes[0].value = "form-control form-control-danger";
-        flag = false;
+   		flag = true;
 	}
-    return flag;
+	return flag;
 }
 
 /*
- * validates Email format 
+ * validates Email format
  */
 function validateEmail() {
 
-    var flag = false;
+	var flag = false;
 	document.getElementById("email_class").attributes[0] = "form-group row";
 	document.getElementById("email").attributes[0] = "form-control";
 
@@ -39,21 +39,21 @@ function validateEmail() {
 	if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email) && email.length > 1) {
    		document.getElementById("email_class").attributes[0].value = "form-group row has-success";
    		document.getElementById("email").attributes[0].value = "form-control form-control-success";
-        flag = true;
+   		flag = true;
 	}
 	else {
    		document.getElementById("email_class").attributes[0].value = "form-group row has-danger";
    		document.getElementById("email").attributes[0].value = "form-control form-control-danger";
-        flag = false;
+   		flag = false;
 	}
-    return flag;
+	return flag;
 }
 
 /*
  * validate Phone number
  */
 function validatePhone() {
-    var flag = false;
+	var flag = false;
 	document.getElementById("phone_class").attributes[0] = "form-group row";
 	document.getElementById("phone").attributes[0] = "form-control bfh-phone";
 
@@ -61,24 +61,24 @@ function validatePhone() {
 	if(phone.length == 0) return false;
 
 	if (/\d\d\d\d\d\d\d\d\d\d/.test(phone) && phone.length > 1) {
-        document.getElementById("phone_class").attributes[0].value = "form-group row has-success";
+   		document.getElementById("phone_class").attributes[0].value = "form-group row has-success";
    		document.getElementById("phone").attributes[0].value = "form-control bfh-phone form-control-success";
-        flag = true;
+   		flag = true;
 	}
 	else {
    		document.getElementById("phone_class").attributes[0].value = "form-group row has-danger";
    		document.getElementById("phone").attributes[0].value = "form-control bfh-phone form-control-danger";
-        flag = false;
+   		flag = false;
 	}
 	document.getElementById("countryCode").attributes[0].value = "form-control form-control-primary";
-    return flag;
+	return flag;
 }
 
 /*
  * DOC or PDF
  */
 function validateFile() {
-    var flag = false;
+	var flag = false;
 	document.getElementById("resume_class").attributes[0] = "form-group row";
 	document.getElementById("resume").attributes[0] = "form-control";
 
@@ -91,21 +91,21 @@ function validateFile() {
 	if (file_ext == "pdf" || file_ext == "doc" || file_ext == "docx") {
    		document.getElementById("resume_class").attributes[0].value = "form-group row has-success";
    		document.getElementById("resume").attributes[0].value = "form-control form-control-success";
-        flag = true;
+   		flag = true;
 	}
 	else {
    		document.getElementById("resume_class").attributes[0].value = "form-group row has-danger";
    		document.getElementById("resume").attributes[0].value = "form-control form-control-danger";
-        flag = false;
-	}
+   		flag = false;
 
-    return flag;
+	}
+	return flag;
 }
 
-// checks length of text in letter
+// checks length
 function validateCoverLetter() {
-    var flag = false;
-    document.getElementById("cover_letter_class").attributes[0] = "form-group row";
+	var flag = false;
+	document.getElementById("cover_letter_class").attributes[0] = "form-group row";
 	document.getElementById("cover_letter").attributes[0] = "form-control";
 
 	var cover_letter_value = document.getElementById("cover_letter").value;
@@ -114,14 +114,14 @@ function validateCoverLetter() {
 	if (cover_letter_value.length > 1) {
    		document.getElementById("cover_letter_class").attributes[0].value = "form-group row has-success";
    		document.getElementById("cover_letter").attributes[0].value = "form-control form-control-success";
-        flag = true;
+   		flag = true;
 	}
 	else {
    		document.getElementById("cover_letter_class").attributes[0].value = "form-group row has-danger";
    		document.getElementById("cover_letter").attributes[0].value = "form-control form-control-danger";
-        flag = false;
+   		flag = false;
 	}
-    return flag;
+	return flag;
 }
 
 function restoreStyle(innerInput, outerFieldSet) {
@@ -147,10 +147,8 @@ function init() {
  * validate URL by checking domain name
  */
 function validateURL(elementName, elementNameClass) {
-    var flag = false;
 
-    console.log(elementName, elementNameClass);
-
+	var flag = false;
 	document.getElementById(elementNameClass).attributes[0] = "form-group row";
 	document.getElementById(elementName).attributes[0] = "form-control";
 
@@ -164,12 +162,12 @@ function validateURL(elementName, elementNameClass) {
 		if(string.indexOf(substring) > -1) {
 	   		document.getElementById(elementNameClass).attributes[0].value = "form-group row has-success";
 	   		document.getElementById(elementName).attributes[0].value = "form-control form-control-success";
-            flag = true;
+	   		flag = true;
 		}
 		else {
 	   		document.getElementById(elementNameClass).attributes[0].value = "form-group row has-danger";
 	   		document.getElementById(elementName).attributes[0].value = "form-control form-control-danger";
-            flag = false;
+	   		flag = false;
 		}
 	}
 
@@ -178,63 +176,50 @@ function validateURL(elementName, elementNameClass) {
 		if (string.indexOf(substring) > -1) {
 	   		document.getElementById(elementNameClass).attributes[0].value = "form-group row has-success";
 	   		document.getElementById(elementName).attributes[0].value = "form-control form-control-success";
-            flag = true;
+	   		flag = true;
 		}
 		else {
 	   		document.getElementById(elementNameClass).attributes[0].value = "form-group row has-danger";
 	   		document.getElementById(elementName).attributes[0].value = "form-control form-control-danger";
-            flag = false;
+	   		flag = false;
 		}
 	}
-    return flag;
+	return flag;
 }
 
 function formSubmit() {
-    console.log(validateName());
-    if(
-        validateName() &&
-        validateEmail() &&
-        validatePhone() &&
-        validateFile() &&
-        validateCoverLetter() &&
-        validateURL()) {
-    
-        // everything is validated now you can proceed further
-       console.log('Success');
-    } else  {
-        // show the warning info on input field
-        
-        // name
-   		if(!validateName()) {
-            document.getElementById("name_class").attributes[0].value = "form-group row has-warning";
-   		    document.getElementById("name").attributes[0].value = "form-control form-control-warning";
-        }
+	if(
+	    validateName() &&
+	    validateEmail() &&
+	    validatePhone() &&
+	    validateFile() &&
+	    validateCoverLetter()
+ 	) {
 
-        // email 
-        if(!validateEmail()) {
-   		    document.getElementById("email_class").attributes[0].value = "form-group row has-warning";
-   		    document.getElementById("email").attributes[0].value = "form-control form-control-warning";
-        }
-
-        // phone number
-        if(!validatePhone()) {    
-            document.getElementById("phone_class").attributes[0].value = "form-group row has-warning";
-   	    	document.getElementById("phone").attributes[0].value = "form-control bfh-phone form-control-warning";
-        }
-        
-        // file
-        if(!validateFile()) {
-    		document.getElementById("resume_class").attributes[0].value = "form-group row has-warning";
-      		document.getElementById("resume").attributes[0].value = "form-control form-control-warning";
-        }
-
-        // cover letter
-        if(!validateCoverLetter())  {
-       		document.getElementById("cover_letter_class").attributes[0].value = "form-group row has-warning";
-   	    	document.getElementById("cover_letter").attributes[0].value = "form-control form-control-warning";
-        }
-        console.log('Failure');
-    }
+		document.jobForm.submit();
+	} else {
+		if(!validateName()) {
+   		document.getElementById("name_class").attributes[0].value = "form-group row has-warning";
+   		document.getElementById("name").attributes[0].value = "form-control bfh-phone form-control-warning";
+		}
+		if(!validateEmail()) {
+   		document.getElementById("email_class").attributes[0].value = "form-group row has-warning";
+   		document.getElementById("email").attributes[0].value = "form-control form-control-warning";
+		}
+		if(!validatePhone()) {
+   		document.getElementById("phone_class").attributes[0].value = "form-group row has-warning";
+   		document.getElementById("phone").attributes[0].value = "form-control bfh-phone form-control-warning";
+		}
+		if(!validateFile()) {
+   		document.getElementById("resume_class").attributes[0].value = "form-group row has-warning";
+   		document.getElementById("resume").attributes[0].value = "form-control form-control-warning";
+		}
+		if(!validateCoverLetter()) {
+   		document.getElementById("cover_letter_class").attributes[0].value = "form-group row has-warning";
+   		document.getElementById("cover_letter").attributes[0].value = "form-control form-control-warning";
+		}
+		console.log("failure");
+	}
 }
 
 
