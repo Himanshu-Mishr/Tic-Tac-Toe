@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="mdl/material.min.css">
+    <link rel="stylesheet" href="css/formstyle.css">
 
     <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
     <!--
@@ -73,7 +74,12 @@
 
 
 
-            <h3>Software Development Engineer</h3>
+            <h3>Software Development Engineer
+
+<!-- Accent-colored raised button with ripple -->
+<button class="pull-xs-right mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Apply for this position
+</button></h3>
 
 
 
@@ -154,6 +160,145 @@
 
 
 
+            <div class="container"  id="iform">
+                <hr>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 jf">
+                        <form
+                        action="mailDetails.php"
+                        name="jobForm"
+                        method="POST"
+                        id="jobForm"
+                        >
+                            <div class="page-header">
+                                <h4>Apply for this job <small class="pull-xs-right"><span style="color:red;">*</span>Required</small></h4>
+                            </div>
+                            <hr>
+                            <!-- first name -->
+                            <div class="form-group row" id="name_class">
+                                <label for="name" class="col-sm-2 form-control-label" style="color:black;">Name <span style="color:red;">*</span>
+                                </label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text"
+                                    onkeydown="restoreStyle('name',
+                                    'name_class');" onkeyup="validateName();"
+                                    onblur="validateName();" id="name"
+                                    name="name" placeholder="">
+                                </div>
+                            </div>
+                            <!-- Email -->
+                            <div class="form-group row" id="email_class">
+                                <label for="inputEmail3" style="color:black;" class="col-sm-2 form-control-label">Email <span style="color:red;">*</span>
+                                </label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="email"
+                                    onkeydown="restoreStyle('email',
+                                    'email_class');" onkeyup="validateEmail();"
+                                    onblur="validateEmail();" id="email"
+                                    name="email" placeholder="">
+                                </div>
+                            </div>
+                            <!-- Phone number -->
+                            <div class="form-group row" id="phone_class">
+                                <label for="phone" style="color:black;" class="col-sm-2 form-control-label">Phone No.
+                                    <span style="color:red;">*</span>
+                                </label>
+                                <div class="col-sm-4">
+                                    <select class="form-control"
+                                        name="countryCode" id="countryCode" style="border-color:#CCC;" onfocus="init();">
+                                        <option value="+91">India (+91)</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input class="form-control bfh-phone" onkeydown="restoreStyle('phone', 'phone_class');" onkeyup="validatePhone();" onblur="validatePhone();" maxlength="10" type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            <!-- resume -->
+                            <div class="form-group row" id="resume_class">
+                                <label for="resume" style="color:black;" class="col-sm-2 form-control-label">Resume/CV<span style="color:red;">*</span>
+                                </label>
+                                <div class="col-sm-6">
+                                    <label class="file">
+                                        <input class="form-control" type="file"
+                                        id="resume" name="resume"  style="opacity:1;" onchange="validateFile();">
+                                    </label>
+                                </div>
+                                <div class="col-sm-4 pull-xs-right">
+                                    <p class="text-muted">File Format: pdf or docx</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- Cover letter -->
+                            <div class="form-group row" id="cover_letter_class">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        Why do you want to join Cozee ? <span style="color:red;">*</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <textarea class="form-control" rows="3"
+                                            onkeydown="restoreStyle('cover_letter',
+                                            'cover_letter_class');"
+                                        onkeyup="validateCoverLetter();"
+                                        id="cover_letter" name="coverLetter" onblur="validateCoverLetter();"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Linkedin Profile -->
+                            <div class="form-group row" id="URLlinkedin_class">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        Linkedin Profile
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <input class="form-control"
+                                        onkeydown="restoreStyle('URLlinkedin',
+                                        'URLlinkedin_class');"
+                                        onkeyup="validateURL('URLlinkedin',
+                                        'URLlinkedin_class');" type="text"
+                                        placeholder="Enter your profile URL"
+                                        onblur="validateURL('URLlinkedin',
+                                        'URLlinkedin_class');" id="URLlinkedin"
+                                        name="URLlinkedin">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Github Profile -->
+                            <div class="form-group row" id="URLgithub_class">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        Github Profile
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <input class="form-control"
+                                        onkeyup="validateURL('URLgithub',
+                                        'URLgithub_class');" type="text"
+                                        onkeydown="restoreStyle('URLgithub',
+                                        'URLgithub_class');" placeholder="Enter
+                                        your profile URL"
+                                        onblur="validateURL('URLgithub',
+                                        'URLgithub_class');" id="URLgithub"
+                                        name="URLgithub">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                   <a class="btn btn-success pull-xs-right"
+                                        onclick="formSubmit();"
+                                        role="button"> Submit Application</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
 
 

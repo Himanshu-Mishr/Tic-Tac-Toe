@@ -21,6 +21,10 @@
   flex-shrink: 0;
 }
 
+.mdl-button--accent.mdl-button--accent.mdl-button--raised, .mdl-button--accent.mdl-button--accent.mdl-button--fab {
+  background-color: #9C0F5F;
+}
+
 .demo-main {
   margin-top: -35vh;
   flex-shrink: 0;
