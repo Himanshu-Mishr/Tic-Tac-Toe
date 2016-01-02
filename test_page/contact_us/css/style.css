@@ -1,0 +1,82 @@
+.better-row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+a {
+  color: black;
+}
+
+#shortcut-button {
+    overflow: visible;
+  z-index: 10;
+  margin-top: -20px;
+}
+
+
+@media (max-width: 500px) {
+  .jf {
+    padding: 5%;
+  }
+  .better-row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .iform {
+      background: #EEE;
+  }
+  .contact-layout.is-small-screen .contact-content {
+      padding: 40px 16px !important;
+  }
+}
+
+
+
+.demo-header .mdl-layout__header-row {
+    background:#3F51B5 !important;
+  color: white !important;
+}
+
+.demo-ribbon {
+  width: 100%;
+  height: 30vh;
+  background-color: #3F51B5;
+  flex-shrink: 0;
+}
+
+.demo-main {
+  margin-top: -20vh;
+  flex-shrink: 0;
+}
+
+.demo-header .mdl-layout__header-row {
+  padding-left: 40px;
+}
+
+.demo-container {
+  max-width: 1600px;
+  width: calc(100% - 16px);
+  margin: 0 auto;
+}
+
+.demo-content {
+  border-radius: 2px;
+  padding: 80px 56px;
+  margin-bottom: 80px;
+}
+
+.demo-layout.is-small-screen .demo-content {
+  padding: 40px 28px;
+}
+
+.demo-content h3 {
+  margin-top: 48px;
+}
+
+.demo-footer {
+  padding-left: 40px;
+}
+
+.demo-footer .mdl-mini-footer--link-list a {
+  font-size: 13px;
+}
