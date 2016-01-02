@@ -25,11 +25,17 @@
 
 @media (max-width: 500px) {
 	.jf {
-		padding: 7%;
-		background: #EEE;
+		padding: 5%;
+	}
+	.better-row {
+		margin-left: 0px !important;
+		margin-right: 0px !important;
 	}
 	.iform {
-		background: #EEE;
+			background: #EEE;
+	}
+	.job-layout.is-small-screen .job-content {
+	    padding: 40px 16px !important;
 	}
 }
 
