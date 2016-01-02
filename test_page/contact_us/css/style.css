@@ -8,11 +8,11 @@ a {
 }
 
 #shortcut-button {
-    overflow: visible;
-  z-index: 10;
-  margin-top: -20px;
+  margin-bottom: -43px;
+  /*position: absolute;*/
+  z-index: 999;
+  text-align: center;
 }
-
 
 @media (max-width: 500px) {
   .jf {
@@ -28,9 +28,12 @@ a {
   .contact-layout.is-small-screen .contact-content {
       padding: 40px 16px !important;
   }
+
 }
 
+@media (min-width: 700px) {
 
+}
 
 .demo-header .mdl-layout__header-row {
     background:#3F51B5 !important;
