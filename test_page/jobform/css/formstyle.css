@@ -23,6 +23,17 @@
 	padding: 43px;
 }
 
+@media (max-width: 500px) {
+	.jf {
+		padding: 7%;
+		background: #EEE;
+	}
+	.iform {
+		background: #EEE;
+	}
+}
+
+
 .required-field-mark  {
 	color:red;
 }
