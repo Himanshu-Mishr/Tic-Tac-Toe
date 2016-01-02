@@ -1,0 +1,32 @@
+.other-job-link  {
+	color: #9c0f5f !important;
+}
+
+#heading {
+	background:#9c0f5f;
+	color: white;
+}
+
+.navbar {
+	background:#9c0f5f;
+	border-radius: 0px;
+}
+
+#logo {
+	width: 10%;
+	margin-left: 20%;
+}
+
+/* configuration for form area */
+.jf {
+	background: #EEE;
+	padding: 43px;
+}
+
+.required-field-mark  {
+	color:red;
+}
+
+.job-heading {
+	font-size: 221%;
+}
