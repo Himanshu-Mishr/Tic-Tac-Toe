@@ -1,400 +1,46 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Title Page</title>
 
-<head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Careers @ Cozee</title>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+	</head>
+	<body>
 
-    <!--live version Bootstrap 4 core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+		<pre>
 
-    <!-- Stylesheet for awesome font -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		README
+		-----------
+			test_page/index.html
 
-    <!-- Custom Style Sheet for this page -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <style>
-    .owl-item {
-        /*overflow: visible;*/
-    }
-    .item {
-        margin-top: auto;
-        margin-bottom: 0px;
-        /*height: 500px;*/
-        height: 80%;
-    }
-    .center > img {
-        box-shadow: 0px 0px 300px 50px black;
-        /*min-height: 100%;*/
-        height: 600px;
-    }
-    </style>
-</head>
+		career page:
+		-----------
+			test_page/career.html
+			test_page/career/css
+			test_page/career/js
 
-<body onload="showStaff(1);">
-    <!------------------------- welcome slide ---------------------------->
-    <div id="slide-1">
-        <div class="row" style="margin-left: 0px !important;margin-right: 0px !important;">
-            <div class="text-xs-center
-                    col-xs-12 col-xs-offset-0
-                    col-sm-10 col-sm-offset-1
-                    col-md-8 col-md-offset-2
-                    col-lg-8 col-lg-offset-2
-                    col-xl-6 col-xl-offset-3" id="slide-1-heading">
-                <h1 class="display-3"> Work at Cozee</h1>
-            </div>
-        </div>
-        <div class="row better-row" style="margin-left: 0px !important;margin-right: 0px !important;">
-            <div class="text-xs-center
-                    col-xs-10 col-xs-offset-1
-                    col-sm-10 col-sm-offset-1
-                    col-md-8 col-md-offset-2
-                    col-lg-8 col-lg-offset-2
-                    col-xl-6 col-xl-offset-3" id="slide-1-msg" style="padding-left:0px;padding-right:0px;">
-<h5>We're looking for talented people who care about solving hard problems and building technology that people love to use</h5>
-            </div>
-        </div>
-        <div id="slide-1-button" class="text-xs-center">
-            <a class="btn btn-secondary slide-1-button" href="#slide-5" role="button">Current opening postions</a>
-        </div>
+		job description:
+		-------------
+			test_page/jobform.html
+			test_page/jobform/css
+			test_page/jobform/js
 
-    </div>
-    <!--------------------------- mission slide -------------------------->
-    <div id="slide-2">
-        <div class="row slide-heading" style="margin-left: 0px !important;margin-right: 0px !important;">
-            <div class="text-xs-center
-                    col-xs-12 col-xs-offset-0
-                    col-sm-10 col-sm-offset-1
-                    col-md-8 col-md-offset-2
-                    col-lg-8 col-lg-offset-2
-                    col-xl-6 col-xl-offset-3">
-                <h2> Cozee is </h2>
-            </div>
-        </div>
-        <div class="row" style="margin-left: 0px !important;margin-right: 0px !important;">
-            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-xs-justify text-sm-justify text-md-justify text-lg-justify" id="slide-2-msg">
-                a technology company that enables on-demand delivery to empower local economies. We're building a company people love. We help owner businesses grow and provide cozee homes to tenant. We're looking to expand the founding team with talented people who are excited about our mission to build out the world best cozee homes providers.
-                <br>
-                <br> Cozee is based in Bengalore, India.
-            </div>
-        </div>
-    </div>
-    <!--------------------------------- culture slide -------------------->
-    <div id="slide-3">
-        <div class="row slide-heading" id="slide-3-heading" style="margin-left: 0px !important;margin-right: 0px !important;">
-            <div class="text-xs-center
-                    col-xs-12 col-xs-offset-0
-                    col-sm-10 col-sm-offset-1
-                    col-md-8 col-md-offset-2
-                    col-lg-8 col-lg-offset-2
-                    col-xl-6 col-xl-offset-3">
-                <h2> Our Culture </h2>
-            </div>
-        </div>
-        <div id="slide-3-cards">
-            <div class="container">
-                <div class="card-columns">
-                    <div class="card slide-3-culture-card text-xs-left">
-                        <div class="row">
-                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                <i class="fa fa-square" style="color:#FCAD13"></i>
-                            </div>
-                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                                <p>We always ship code the moment it is better than what is live on our site – no matter what.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card slide-3-culture-card text-xs-left">
-                        <div class="row">
-                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                <i class="fa fa-square" style="color:#FD4D00"></i>
-                            </div>
-                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                                <p>We are a product, engineering, and design-led organization.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card slide-3-culture-card text-xs-left">
-                        <div class="row">
-                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                <i class="fa fa-square" style="color:#10C113"></i>
-                            </div>
-                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                                <p>Design is a critical part of our product. We constantly raise the bar on user experience.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="slide-3-image-slide">
+		Contact us page:
+		---------------
+			test_page/contact_us.html
+			test_page/contact_us/css
+			test_page/contact_us/js
 
-            <br>
-            <br>
-            <!-- <div class="container-fluid"> -->
+		</pre>
 
-            <div id="owl" class="owl-carousel">
-                <div class="item"><img class="img-responsive" src="image/slide1.jpg" alt="pic">
-                </div>
-                <div class="item"><img class="img-responsive" src="image/a3.jpg" alt="pic">
-                </div>
-                <div class="item"><img class="img-responsive" src="image/slide6.jpg" alt="pic">
-                </div>
-                <div class="item"><img class="img-responsive" src="image/slide4.jpg" alt="pic">
-                </div>
-                <div class="item"><img class="img-responsive" src="image/slide5.jpg" alt="pic">
-                </div>
-            </div>
-            <!-- </div> -->
-        </div>
-        <br>
-        <br>
-    </div>
-        <!------------------------- staff testimonial -------------------->
-        <div id="slide-4">
-        <div class="row slide-heading" style="margin-left: 0px !important;margin-right: 0px !important;">
-            <div class="text-xs-center
-                    col-xs-12 col-xs-offset-0
-                    col-sm-10 col-sm-offset-1
-                    col-md-8 col-md-offset-2
-                    col-lg-8 col-lg-offset-2
-                    col-xl-6 col-xl-offset-3">
-                <h2> Meet Our Team </h2>
-            </div>
-        </div>
-            <div class="container">
-            <div class="row">
-                <div class="col-xs-12 hidden-sm-up">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <img id="staff1thumbnail" src="image/staff1.jpg" class="img-thumbnail img-responsive slide-4-staff" onclick="showStaff(1);" alt="staff 1">
-                    </div>
-                    <div class="col-xs-4">
-                        <img id="staff2thumbnail" src="image/staff2.jpg" class="img-thumbnail img-responsive slide-4-staff" onclick="showStaff(2);" alt="staff 1">
-                    </div>
-                    <div class="col-xs-4">
-                        <img id="staff3thumbnail" src="image/staff3.jpg" class="img-thumbnail img-responsive slide-4-staff" onclick="showStaff(3);" alt="staff 1">
-                    </div>
-                </div>
-                <br>
-                </div>
-            </div>
-                <div class="row">
-                    <div class="hidden-xs-down col-sm-2 col-md-2 col-lg-2">
-                        <!-- thumbnail of staff -->
-                        <div class="row staff-thumbnail">
-                            <img id="staff1thumbnail" src="image/staff1.jpg" class="img-thumbnail img-responsive slide-4-staff" onclick="showStaff(1);" alt="staff 1">
-                        </div>
-                        <div class="row staff-thumbnail">
-                            <img id="staff2thumbnail" src="image/staff2.jpg" class="img-thumbnail img-responsive slide-4-staff" onclick="showStaff(2);" alt="staff 1">
-                        </div>
-                        <div class="row  staff-thumbnail">
-                            <img id="staff3thumbnail" src="image/staff3.jpg" class="img-thumbnail img-responsive slide-4-staff" onclick="showStaff(3);" alt="staff 1">
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-                        <!-- description of that particular staff -->
-                        <div class="row">
-                            <div class="hidden-xs-down col-sm-6 col-md-6 col-lg-6" style="position: relative; left: 0; top: 0;">
-                                <!-- Staff bigger image -->
-                                <img id="staff-large" visibility="visible" src="image/staff1_large.jpg" class="img-thumbnail img-responsive slide-4-staff-large" alt="">
-                            </div>
-
-                            <!-- Staff testimonial -->
-                            <div id="about-staff" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!------------------------- Job opening -------------------------->
-<!--         <div id="slide-5">
-        <div class="row slide-heading" id="slide-5-heading" style="margin-left: 0px !important;margin-right: 0px !important;">
-            <div class="text-xs-center
-                    col-xs-12 col-xs-offset-0
-                    col-sm-10 col-sm-offset-1
-                    col-md-8 col-md-offset-2
-                    col-lg-8 col-lg-offset-2
-                    col-xl-6 col-xl-offset-3">
-                <h2> Interested? We’re hiring. </h2>
-                <h5>Our team shares a passion for software engineering, user-centered design, data visualization, and business optimization. If you think you’re a good fit, check out the open positions below.</h5>
-
-            </div>
-        </div>
-            <div class="container text-xs-left">
-
-                <hr>
-                <div class="row">
-                    <div class="col-xs-3 col-sm-3 col-sm-offset-1 col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2 slide-5-job-category">
-                        Engineering
-                    </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-
-                    </div>
-                    <div class="text-xs-left col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <a class="job-link" href="form1.html"><h5>Front-end Engineer</h5></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <a class="job-link" href="form1.html"><h5>Back-end Engineer</h5></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-xs-3 col-sm-3 col-sm-offset-1 col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2 slide-5-job-category">
-                        Management
-                    </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-
-                    </div>
-                    <div class="text-xs-left col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <a class="job-link" href="form1.html"><h5>Account Manager</h5></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-xs-3 col-sm-3 col-sm-offset-1 col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2 slide-5-job-category">
-                        Others
-                    </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-
-                    </div>
-                    <div class="text-xs-left col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <a class="job-link" href="form1.html"><h5>Customer Relationship</h5></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!------------------------- Job opening -------------------------->
-        <div id="slide-5">
-
-            <div class="row slide-heading" id="slide-5-heading" style="margin-left: 0px !important;margin-right: 0px !important;">
-                <div class="text-xs-center
-                        col-xs-12 col-xs-offset-0
-                        col-sm-10 col-sm-offset-1
-                        col-md-8 col-md-offset-2
-                        col-lg-8 col-lg-offset-2
-                        col-xl-6 col-xl-offset-3">
-                    <h2> Interested? We’re hiring. </h2>
-                    <h5>Our team shares a passion for software engineering, user-centered design, data visualization, and business optimization. If you think you’re a good fit, check out the open positions below.</h5>
-
-                </div>
-            </div>
-
-        <div class="container">
-
-            <div class="row" style="margin-left: 0px !important;margin-right: 0px !important;">
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <div class="card card-block text-xs-center job-card">
-                    <h4 class="card-title">Front-End Engineer</h4>
-                    <p class="card-text text-muted font-weight-bold">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACDklEQVRIS51V223bMBQ9VzBSFJACj8Bu4BG0QT2Cfi191NnAnaDOh5RfbVCNoA3qDcIRDFNA0CQwC1KWTUqkJFef4uPcex6XhImPvbwxyM8fkPgGwlJvlziC8ApaPPPNVz52BY0tslzsAKwA2vEsPJh7Wd6sALlDgD98E/303eMFYMWphAxqnoXleBFNAjrHPH1MXPucACxXh7DkabifolCts6LZKtpcxbgBCnHgabSyKFGXQH4HQJD0m2fhs70+PKPWBwCsOK2BgJnVs1xUIFny9LFqKz6tISnhWbTuQHQXOPNuT/d/CKCFpaoT9SKmumxriyz2AJXXfS8ixhkxzyJljOvnAqgGlZE88E1UWwDqQkkrq9PipLq0xHZ3ECzKzt8tHcGyL6CmxAC+dLqe7sDBJStEDVokV9A2fCVPo/imwVA7t8j68MfObFWn+fy5V/65JJkQLLZmillua+IVuXWJqM3q5mXBfcYfNABTKb7So4Lp2T8yKuZ3MdaxH0BXJVnfFX262oFI3Nft1DSt8B4m/ImOLh3YL7nEQ1OauenvGwdo06m8baXYsGYJorIfwtEkOyio+pbUTnPYefa4tkfCMFSdlc3w+aw8StHNhkK9XHVHBfMMtv/qQFerxPzSVF34WCEO+BvGPvHv0sCa9+qxv3xzQziLohuIUA//8Z4xch+A4l6NhN7bMDar/gFumSUoaYpnOQAAAABJRU5ErkJggg=="/>
-                    Bangalore</p>
-                    <p class="card-text text-xs-justify text-sm-center"><img src="image/job_data_science.svg" class="img-responsive" alt="Image"></p>
-                    <p class="card-text font-weight-bold"><a class="" href="form1.html" role="button">View Position <i class="fa fa-angle-right"></i></a></p>
-                </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                    <div class="card card-block text-xs-center job-card">
-                        <h4 class="card-title">Back-End Engineer</h4>
-                        <p class="card-text text-muted font-weight-bold">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACDklEQVRIS51V223bMBQ9VzBSFJACj8Bu4BG0QT2Cfi191NnAnaDOh5RfbVCNoA3qDcIRDFNA0CQwC1KWTUqkJFef4uPcex6XhImPvbwxyM8fkPgGwlJvlziC8ApaPPPNVz52BY0tslzsAKwA2vEsPJh7Wd6sALlDgD98E/303eMFYMWphAxqnoXleBFNAjrHPH1MXPucACxXh7DkabifolCts6LZKtpcxbgBCnHgabSyKFGXQH4HQJD0m2fhs70+PKPWBwCsOK2BgJnVs1xUIFny9LFqKz6tISnhWbTuQHQXOPNuT/d/CKCFpaoT9SKmumxriyz2AJXXfS8ixhkxzyJljOvnAqgGlZE88E1UWwDqQkkrq9PipLq0xHZ3ECzKzt8tHcGyL6CmxAC+dLqe7sDBJStEDVokV9A2fCVPo/imwVA7t8j68MfObFWn+fy5V/65JJkQLLZmillua+IVuXWJqM3q5mXBfcYfNABTKb7So4Lp2T8yKuZ3MdaxH0BXJVnfFX262oFI3Nft1DSt8B4m/ImOLh3YL7nEQ1OauenvGwdo06m8baXYsGYJorIfwtEkOyio+pbUTnPYefa4tkfCMFSdlc3w+aw8StHNhkK9XHVHBfMMtv/qQFerxPzSVF34WCEO+BvGPvHv0sCa9+qxv3xzQziLohuIUA//8Z4xch+A4l6NhN7bMDar/gFumSUoaYpnOQAAAABJRU5ErkJggg=="/>
-                        Bangalore</p>
-                        <p class="card-text"><img src="image/job_technology.svg" class="img-responsive" alt="Image"></p>
-                        <p class="card-text font-weight-bold"><a class="" href="form1.html" role="button">View Position <i class="fa fa-angle-right"></i></a></p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                    <div class="card card-block text-xs-center job-card">
-                        <h4 class="card-title">Account Manager</h4>
-                        <p class="card-text text-muted font-weight-bold">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACDklEQVRIS51V223bMBQ9VzBSFJACj8Bu4BG0QT2Cfi191NnAnaDOh5RfbVCNoA3qDcIRDFNA0CQwC1KWTUqkJFef4uPcex6XhImPvbwxyM8fkPgGwlJvlziC8ApaPPPNVz52BY0tslzsAKwA2vEsPJh7Wd6sALlDgD98E/303eMFYMWphAxqnoXleBFNAjrHPH1MXPucACxXh7DkabifolCts6LZKtpcxbgBCnHgabSyKFGXQH4HQJD0m2fhs70+PKPWBwCsOK2BgJnVs1xUIFny9LFqKz6tISnhWbTuQHQXOPNuT/d/CKCFpaoT9SKmumxriyz2AJXXfS8ixhkxzyJljOvnAqgGlZE88E1UWwDqQkkrq9PipLq0xHZ3ECzKzt8tHcGyL6CmxAC+dLqe7sDBJStEDVokV9A2fCVPo/imwVA7t8j68MfObFWn+fy5V/65JJkQLLZmillua+IVuXWJqM3q5mXBfcYfNABTKb7So4Lp2T8yKuZ3MdaxH0BXJVnfFX262oFI3Nft1DSt8B4m/ImOLh3YL7nEQ1OauenvGwdo06m8baXYsGYJorIfwtEkOyio+pbUTnPYefa4tkfCMFSdlc3w+aw8StHNhkK9XHVHBfMMtv/qQFerxPzSVF34WCEO+BvGPvHv0sCa9+qxv3xzQziLohuIUA//8Z4xch+A4l6NhN7bMDar/gFumSUoaYpnOQAAAABJRU5ErkJggg=="/>
-                        Bangalore</p>
-                        <p class="card-text"><img src="image/job_investor_relations.svg" class="img-responsive" alt="Image"></p>
-                        <p class="card-text font-weight-bold"><a class="" href="form1.html" role="button">View Position <i class="fa fa-angle-right"></i></a></p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                    <div class="card card-block text-xs-center job-card">
-                        <h4 class="card-title">Customer Relationship</h4>
-                        <p class="card-text text-muted font-weight-bold">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACDklEQVRIS51V223bMBQ9VzBSFJACj8Bu4BG0QT2Cfi191NnAnaDOh5RfbVCNoA3qDcIRDFNA0CQwC1KWTUqkJFef4uPcex6XhImPvbwxyM8fkPgGwlJvlziC8ApaPPPNVz52BY0tslzsAKwA2vEsPJh7Wd6sALlDgD98E/303eMFYMWphAxqnoXleBFNAjrHPH1MXPucACxXh7DkabifolCts6LZKtpcxbgBCnHgabSyKFGXQH4HQJD0m2fhs70+PKPWBwCsOK2BgJnVs1xUIFny9LFqKz6tISnhWbTuQHQXOPNuT/d/CKCFpaoT9SKmumxriyz2AJXXfS8ixhkxzyJljOvnAqgGlZE88E1UWwDqQkkrq9PipLq0xHZ3ECzKzt8tHcGyL6CmxAC+dLqe7sDBJStEDVokV9A2fCVPo/imwVA7t8j68MfObFWn+fy5V/65JJkQLLZmillua+IVuXWJqM3q5mXBfcYfNABTKb7So4Lp2T8yKuZ3MdaxH0BXJVnfFX262oFI3Nft1DSt8B4m/ImOLh3YL7nEQ1OauenvGwdo06m8baXYsGYJorIfwtEkOyio+pbUTnPYefa4tkfCMFSdlc3w+aw8StHNhkK9XHVHBfMMtv/qQFerxPzSVF34WCEO+BvGPvHv0sCa9+qxv3xzQziLohuIUA//8Z4xch+A4l6NhN7bMDar/gFumSUoaYpnOQAAAABJRU5ErkJggg=="/>
-                        Bangalore</p>
-                        <p class="card-text"><img src="image/job_commercial.svg" class="img-responsive" alt="Image"></p>
-                        <p class="card-text font-weight-bold"><a class="" href="form1.html" role="button">View Position <i class="fa fa-angle-right"></i></a></p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="row" style="margin-left: 0px !important;margin-right: 0px !important;">
-                <div class="hidden-md-down col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-                    <p> Think you might be a good fit but don’t see your role listed here? We’d love to hear about what you can bring to our team. Please send a cover letter & resume to <a href="mailto:careers@cozee.in?subject=feedback" "email me">careers@cozee.in</a></p>
-                </div>
-            </div>
-
-            <div class="row" style="margin-left: 0px !important;margin-right: 0px !important;">
-                <div class="hidden-md-up col-xs-12 col-sm-12">
-
-            <div class="card card-inverse job-extra text-xs-center">
-              <div class="card-block">
-                  <p>Think you might be a good fit but don’t see your role listed here? We’d love to hear about what you can bring to our team. Please send a cover letter & resume to <a href="mailto:careers@cozee.in?subject=feedback" "email me">careers@cozee.in</a></p>
-              </div>
-            </div>
-
-                </div>
-            </div>
-
-        </div>
-        </div>
-    <!---------------------------- Script Files -------------------------->
-    <!-- Fix for uncaught error for tether.js -->
-
-    <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
-
-    <!-- Offline/Online version of JQuery -->
-            <script src="js/jquery.min.js"></script>
-        <script>
-        window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"><\/script>')
-        </script>
-
-    <!-- Bootstrap Js file -->
-    <!-- Live version jQuery first, then Bootstrap JS. -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/holder.min.js"></script>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-
-    <!-- Files for Slide -->
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/script.js"></script>
-</body>
-
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+	</body>
 </html>
+
