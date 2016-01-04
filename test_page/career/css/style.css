@@ -204,7 +204,7 @@ body {
 /*--------------------------- configuration for slide 5----------------------*/
 
 #slide-5 {
-    background:#F0F1EE;
+    /*background:#F0F1EE;*/
     min-height: 100vh;
 
     padding-top: 1%;
