@@ -47,3 +47,15 @@
 .job-heading {
 	font-size: 221%;
 }
+
+
+
+.breadcrumb {
+	margin-left: 0px;
+	background: none !important;
+	color: #EEE !important;
+}
+.breadcrumb > li > a {
+	background: none !important;
+	color: #424242 !important;
+}
