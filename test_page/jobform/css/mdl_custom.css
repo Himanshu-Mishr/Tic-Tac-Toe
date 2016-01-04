@@ -17,6 +17,15 @@
   width: calc(100%) !important;
 }
 
+@media (min-width: 600px) {
+    .job-main {
+      margin-left: 7%;
+      margin-right: 7%;
+    }
+}
+
+
+
 @media (max-width: 600px) {
     .mdl-grid {
       padding: 0px !important;
