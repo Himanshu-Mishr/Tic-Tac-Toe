@@ -6,6 +6,10 @@
     Slide-5 : Job Openings
  */
 
+body {
+    font-family: "Droid Sans";
+}
+
 
 /*heading of each slide. Comman format for all*/
 
@@ -264,4 +268,8 @@
 .better-row {
     margin-left: 0px !important;
     margin-right: 0px !important;
+}
+
+.slide-6-job-category {
+    margin-bottom: 5%;
 }
