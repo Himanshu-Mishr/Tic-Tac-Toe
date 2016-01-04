@@ -83,19 +83,24 @@
                 <div class="demo-container mdl-grid">
 
                     <!-------------------------- COLUMN 2 -------------------->
-                    <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-                        <div class="demo-crumbs mdl-color-text--grey-500">
-                            Cozee &gt; Contact Us
-                        </div>
+                    <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--9-col">
+
+
+                <ol class="breadcrumb">
+                  <li><a href="http://www.cozee.in">Cozee</a></li>
+                  <li class="active">Contact Us</li>
+                </ol>
+
                         <!-- Form Header -->
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 heading">
+                        <!-- <div class="row better-row"> -->
+                            <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 heading">
                                 <h3>Contact Us</h3>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div> -->
                         <!-- Form -->
-                        <div class="row" id="contactForm">
+                        <div class="row better-row" id="contactForm">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <span class="demo-heading">Contact Us</span>
                                 <form id="response" method="post">
                                     <div class="row">
                                         <div class="form-group">
@@ -141,20 +146,24 @@
                                     </div>
                                     <div class="row" style="margin-top:10px;">
                                         <div class="col-md-12">
-                                            <input type="submit" value="Send Message" class="btn btn-primary btn-lg" data-loading-text="Loading...">
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                                              Submit
+                                        </button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
+                        <br><br>
                         <!-- Map Header -->
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 heading">
-                                <h3>Locate Us</h3>
+                        <div class="row better-row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 demo-heading">
+                                Locate Us
                             </div>
+                            <br><br>
                         </div>
                         <!-- Map -->
-                        <div class="row">
+                        <div class="row better-row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div id="map_canvas" class='mdl-shadow--4dp' style="height:500px"></div>
                             </div>
@@ -162,59 +171,59 @@
                     </div><!-- column 2 -->
 
                     <!-------------------------- column 3 -------------------->
-                    <div class="mdl-cell mdl-cell mdl-cell--4-col">
+                    <div class="mdl-cell mdl-cell mdl-cell--3-col">
 
                     <div class="container-fluid">
                       <div class="card  mdl-shadow--4dp">
 
-  <div class="card-block">
-    <h4 class="card-title">Reach Us Directly</h4>
-    <p class="card-text">9AM - 9PM (Mon-Sat)</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-                  <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                    <i class="material-icons">contact_phone</i>
-                </div>
-                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                    <a href="tel:+917406112211">+91 7406 11 22 11</a>
-                </div>
-            </div>
-    </li>
-    <li class="list-group-item">
-                  <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                    <i class="material-icons">contact_phone</i>
-                </div>
-                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                    <a href="tel:+917406112211">+91 7406 33 44 55</a>
-                </div>
-            </div>
-    </li>
-    <li class="list-group-item">
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                    <i class="material-icons">near_me</i>
-                </div>
-                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                    #2/1A, 10th Main Road, Indira Nagar, Bangalore
-                </div>
-            </div>
-    </li>
-    <li class="list-group-item">
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                    <i class="material-icons">mail</i>
-                </div>
-                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                    <a href="mailto:hello@cozee.in?subject=feedback" "email me">hello@cozee.in</a>
-                </div>
-            </div>
-    </li>
+                          <div class="card-block">
+                            <h4 class="card-title">Reach Us Directly</h4>
+                            <p class="card-text">9AM - 9PM (Mon-Sat)</p>
+                          </div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                          <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                            <i class="material-icons">contact_phone</i>
+                                        </div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                            <a href="tel:+917406112211">+91 7406 11 22 11</a>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li class="list-group-item">
+                                          <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                            <i class="material-icons">contact_phone</i>
+                                        </div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                            <a href="tel:+917406112211">+91 7406 33 44 55</a>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                            <i class="material-icons">near_me</i>
+                                        </div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                            #2/1A, 10th Main Road, Indira Nagar, Bangalore
+                                        </div>
+                                    </div>
+                            </li>
+                            <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                            <i class="material-icons">mail</i>
+                                        </div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                            <a href="mailto:hello@cozee.in?subject=feedback" "email me">hello@cozee.in</a>
+                                        </div>
+                                    </div>
+                            </li>
 
-  </ul>
-</div>
+                          </ul>
+                        </div>
                     </div>
 
 
@@ -222,18 +231,6 @@
                         </div> <!-- column 3 -->
                 </div>
                 <!-- container -->
-                <footer class="demo-footer mdl-mini-footer">
-                    <div class="mdl-mini-footer--left-section">
-                        <ul class="mdl-mini-footer--link-list">
-                            <li><a href="#">Help</a>
-                            </li>
-                            <li><a href="#">Privacy and Terms</a>
-                            </li>
-                            <li><a href="#">User Agreement</a>
-                            </li>
-                        </ul>
-                    </div>
-                </footer>
             </main>
             <!-- everything other then header -->
         </div>
