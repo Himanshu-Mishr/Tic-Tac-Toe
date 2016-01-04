@@ -244,3 +244,19 @@
 #slide-6 {
     height: 100vh;
 }
+
+.slide-6-card-heading {
+    color:#DA433E;
+ }
+
+ .job-opening-text {
+    margin-left: 34%;
+ }
+
+.job-opening-text > a {
+    color: black;
+}
+
+.job-nojob {
+    margin-top: 3%;
+}
