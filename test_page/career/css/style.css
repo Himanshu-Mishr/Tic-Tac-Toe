@@ -260,3 +260,8 @@
 .job-nojob {
     margin-top: 3%;
 }
+
+.better-row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
